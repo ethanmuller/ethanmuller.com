@@ -70,6 +70,7 @@ module.exports = (grunt) ->
       options:
         partials: "partials/*"
         data: "data/*.yml"
+        layout: "layouts/default.hbs"
       index:
         src: "partials/index.hbs"
         dest: "dist/index.html"
