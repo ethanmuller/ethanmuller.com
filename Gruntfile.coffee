@@ -48,6 +48,7 @@ module.exports = (grunt) ->
         dev:
           options:
             environment: 'dev'
+            require: 'sass-globbing'
         dist:
           options:
             environment: 'production'
