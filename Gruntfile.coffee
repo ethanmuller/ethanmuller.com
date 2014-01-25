@@ -22,10 +22,6 @@ module.exports = (grunt) ->
         options:
           livereload: true
 
-      images:
-        files: "opt-imgs/*"
-        tasks: "optimizeImages"
-
       partials:
         files: ["partials/*", "data/*"]
         tasks: ["assemble"]
@@ -133,13 +129,6 @@ module.exports = (grunt) ->
           src: ["**"]
           dest: "dist/"
         ]
-      img:
-        files: [
-          expand: true
-          cwd:'opt-imgs/'
-          src: ["**"]
-          dest: "dist/img"
-        ]
 
     jasmine:
       src: "dist/js/*.js"
@@ -154,11 +143,6 @@ module.exports = (grunt) ->
         steps: "features/step_definitions"
       }
     }
-
-    imageoptim:
-      files: ["opt-imgs"]
-      options:
-        imageAlpha:true
 
     plato:
       complexity:
@@ -177,16 +161,13 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-exec"
   grunt.loadNpmTasks "grunt-plato"
   grunt.loadNpmTasks "grunt-contrib-copy"
-  grunt.loadNpmTasks "grunt-imageoptim"
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "assemble"
 
   grunt.registerTask "bower", [ "copy:bower_jquery", "copy:bower_modernizr" ]
   
   # NOTE: this has to wipe out everything
-  grunt.registerTask "root-canal", [ "clean:all", "bower", "copy:main", "copy:img"]
-
-  grunt.registerTask "optimizeImages", ["imageoptim", "copy:img"]
+  grunt.registerTask "root-canal", [ "clean:all", "bower", "copy:main"]
 
   # Clean, compile and concatenate JS
   grunt.registerTask "javascript:dev", [ "coffee", "concat:js", "jasmine", "cucumberjs", "plato" ]
