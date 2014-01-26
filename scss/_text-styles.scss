@@ -1,0 +1,14 @@
+.t--highlight {
+  color: darken($c--dark, 30%);
+}
+
+.t--long-reading {
+  // Wrap body copy in this text. Optimized for readability.
+
+  font-size: 1.2em;
+  line-height: 1.6;
+
+  @include sb-media(30em){
+    font-size: 1.4em;
+  }
+}

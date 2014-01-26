@@ -23,7 +23,7 @@ module.exports = (grunt) ->
           livereload: true
 
       partials:
-        files: ["partials/*", "data/*"]
+        files: ["partials/*", "layouts/*", "data/*"]
         tasks: ["assemble"]
         options:
           livereload: true

@@ -1,6 +1,16 @@
 // When you need to reset the default styling of elements,
 // do it in this file.
 
+html {
+  font-family: Courier, "Courier New", monospace;
+  color: $c--dark;
+}
+
 body {
   margin: 0;
+}
+
+h1, h2, h3 {
+  font-size: 1em;
+  font-weight: normal;
 }

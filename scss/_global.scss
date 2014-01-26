@@ -1,13 +1,15 @@
 // This file contains reusable classes
 // used for major page layout,
-// as well as some useful simple classes
-// for smaller scale layout adjustments
+// as well as some useful toolbox classes
+// 
+// "l--" prefix denotes layout classes
 
 .l--outer-wrapper {
   // Used to wrap page-level sections.
   // Limits width and centers elements.
-  background: chartreuse;
 
+  width: 90%;
   max-width: 60em;
+
   margin: 0 auto;
 }
