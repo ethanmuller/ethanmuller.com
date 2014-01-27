@@ -44,7 +44,6 @@ end
 
 task :compile => :environment do
   queue "cd #{deploy_to}/#{current_path} && npm install"
-  queue "cd #{deploy_to}/#{current_path} && npm install"
   queue "cd #{deploy_to}/#{current_path} && grunt dist"
 end
 
