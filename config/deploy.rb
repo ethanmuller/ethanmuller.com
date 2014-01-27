@@ -43,6 +43,7 @@ task :setup => :environment do
 end
 
 task :compile => :environment do
+  queue "ln -s #{deploy_to}/shared/node_modules node_modules"
   queue "cd #{deploy_to}/#{current_path} && npm install"
   queue "cd #{deploy_to}/#{current_path} && grunt dist"
 end
