@@ -48,6 +48,7 @@ module.exports = (grunt) ->
         dist:
           options:
             environment: 'production'
+            require: 'sass-globbing'
 
     coffee:
       compile:
@@ -68,16 +69,6 @@ module.exports = (grunt) ->
         src: ["js/libs/*", "js/app.js"]
         #put it in dist/
         dest: "dist/js/ethanmullercom.js"
-
-    modernizr:
-      devFile: "public/js/libs/modernizr.js"
-      outputFile: "dist/js/modernizr.js"
-      extra:
-        shiv: true
-        printshiv: true
-        load: true
-        mq: false
-        cssclasses: true
 
       extensibility:
         addtest: false
@@ -104,13 +95,6 @@ module.exports = (grunt) ->
           expand: true
           cwd: 'js/jquery/'
           src: 'jquery.min.js'
-          dest: 'public/js/libs/'
-        ]
-      bower_modernizr: 
-        files: [
-          expand: true
-          cwd: 'js/modernizr/'
-          src: ['modernizr.js']
           dest: 'public/js/libs/'
         ]
       main:
@@ -140,7 +124,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-compass"
   grunt.loadNpmTasks "grunt-contrib-concat"
   grunt.loadNpmTasks "grunt-cucumber"
-  grunt.loadNpmTasks "grunt-modernizr"
   grunt.loadNpmTasks "grunt-notify"
   grunt.loadNpmTasks "grunt-exec"
   grunt.loadNpmTasks "grunt-plato"
@@ -148,7 +131,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "assemble"
 
-  grunt.registerTask "bower", [ "copy:bower_jquery", "copy:bower_modernizr" ]
+  grunt.registerTask "bower", [ "copy:bower_jquery" ]
   
   # NOTE: this has to wipe out everything
   grunt.registerTask "root-canal", [ "clean:all", "bower", "copy:main"]
@@ -156,7 +139,7 @@ module.exports = (grunt) ->
   # Clean, compile and concatenate JS
   grunt.registerTask "javascript:dev", [ "coffee", "concat:js", "cucumberjs", "plato" ]
 
-  grunt.registerTask "javascript:dist", [ "coffee", "concat:js", "modernizr", "cucumberjs" ]
+  grunt.registerTask "javascript:dist", [ "coffee", "concat:js", "cucumberjs" ]
 
   # Production task
   grunt.registerTask "dev", [ "root-canal", "javascript:dev", "compass:dev", "assemble", "connect", "watch"]
