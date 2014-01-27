@@ -51,10 +51,11 @@ task :deploy => :environment do
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
 
+    queue "cd #{deploy_to}/#{current_path} && npm install"
+    queue "cd #{deploy_to}/#{current_path} && npm install"
+    queue "cd #{deploy_to}/#{current_path} && grunt dist"
+
     to :launch do
-      queue "cd #{deploy_to}/#{current_path} && npm install"
-      queue "cd #{deploy_to}/#{current_path} && npm install"
-      queue "cd #{deploy_to}/#{current_path} && grunt dist"
       queue "touch #{deploy_to}/tmp/restart.txt"
     end
   end
