@@ -23,4 +23,5 @@ DEPENDENCIES
   compass
   mina
   rake
+  sass (>= 2.3.0)
   sass-globbing
