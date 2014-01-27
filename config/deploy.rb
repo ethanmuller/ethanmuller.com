@@ -52,7 +52,6 @@ task :deploy => :environment do
     invoke :'bundle:install'
 
     to :launch do
-      queue "ln -s #{deploy_to}/#{current_path}/node_modules #{deploy_to}/#{shared_path}/node_modules"
       queue "cd #{deploy_to}/#{current_path} && npm install"
       queue "cd #{deploy_to}/#{current_path} && npm install"
       queue "cd #{deploy_to}/#{current_path} && grunt dist"
