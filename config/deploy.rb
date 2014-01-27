@@ -58,6 +58,8 @@ task :deploy => :environment do
     invoke :'bundle:install'
 
     to :launch do
+      queue "cd #{deploy_to}/#{current_path}/static && npm install"
+      queue "cd #{deploy_to}/#{current_path}/static && grunt dist"
       queue "touch #{deploy_to}/tmp/restart.txt"
     end
   end
