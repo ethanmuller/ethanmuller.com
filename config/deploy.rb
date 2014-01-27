@@ -43,8 +43,8 @@ task :setup => :environment do
 end
 
 task :compile => :environment do
-  queue "cd #{deploy_to}/#{current_path} && npm install"
-  queue "cd #{deploy_to}/#{current_path} && grunt dist"
+  queue "npm install"
+  queue "grunt dist"
 end
 
 desc "Deploys the current version to the server."
