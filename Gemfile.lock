@@ -22,4 +22,5 @@ PLATFORMS
 DEPENDENCIES
   compass
   mina
+  rake
   sass-globbing
