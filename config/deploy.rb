@@ -43,6 +43,7 @@ task :setup => :environment do
 end
 
 task :compile => :environment do
+  puts "does this show up?"
   queue "cd #{deploy_to}/#{current_path} && npm install"
   queue "cd #{deploy_to}/#{current_path} && grunt dist"
 end
