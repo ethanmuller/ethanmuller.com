@@ -32,10 +32,6 @@ module.exports = (grunt) ->
         files: ["coffee/*", "js/*.js"]
         tasks: "javascript:dev"
 
-      jsTesting:
-        files: "dist/js/*.js"
-        tasks: "jasmine"
-
       cukes:
         files: ["features/*.feature", "features/step_definitions/*.coffee"]
         tasks: "cucumberjs"
@@ -57,11 +53,6 @@ module.exports = (grunt) ->
       compile:
         files:
           "js/app.js": "coffee/app.coffee"
-      jasmine_specs:
-        files: grunt.file.expandMapping(["specs/*.coffee"], "specs/js/", {
-          rename: (destBase, destPath) ->
-            destBase + destPath.replace(/\.coffee$/, ".js").replace(/specs\//, "")
-        })
 
     assemble:
       options:
@@ -131,13 +122,6 @@ module.exports = (grunt) ->
           dest: "dist/"
         ]
 
-    jasmine:
-      src: "dist/js/*.js"
-      options:
-        specs: "specs/js/*Spec.js"
-        helpers: "specs/js/*Helper.js"
-        vendor: ["public/js/libs/jquery.min.js", "specs/lib/*.js"]
-
     cucumberjs: {
       files: 'features',
       options: {
@@ -155,7 +139,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-compass"
   grunt.loadNpmTasks "grunt-contrib-concat"
-  grunt.loadNpmTasks "grunt-contrib-jasmine"
   grunt.loadNpmTasks "grunt-cucumber"
   grunt.loadNpmTasks "grunt-modernizr"
   grunt.loadNpmTasks "grunt-notify"
@@ -171,9 +154,9 @@ module.exports = (grunt) ->
   grunt.registerTask "root-canal", [ "clean:all", "bower", "copy:main"]
 
   # Clean, compile and concatenate JS
-  grunt.registerTask "javascript:dev", [ "coffee", "concat:js", "jasmine", "cucumberjs", "plato" ]
+  grunt.registerTask "javascript:dev", [ "coffee", "concat:js", "cucumberjs", "plato" ]
 
-  grunt.registerTask "javascript:dist", [ "coffee", "concat:js", "modernizr", "jasmine", "cucumberjs" ]
+  grunt.registerTask "javascript:dist", [ "coffee", "concat:js", "modernizr", "cucumberjs" ]
 
   # Production task
   grunt.registerTask "dev", [ "root-canal", "javascript:dev", "compass:dev", "assemble", "connect", "watch"]
