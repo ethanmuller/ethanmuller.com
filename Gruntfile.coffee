@@ -70,7 +70,7 @@ module.exports = (grunt) ->
         dest: "dist/js/ethanmullercom.js"
 
     modernizr:
-      devFile: "dist/js/modernizr.js"
+      devFile: "public/js/libs/modernizr.js"
       outputFile: "dist/js/modernizr.js"
       extra:
         shiv: true
