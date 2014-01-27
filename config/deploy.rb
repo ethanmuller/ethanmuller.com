@@ -42,6 +42,12 @@ task :setup => :environment do
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/node_modules"]
 end
 
+task :compile => :environment do
+  queue "cd #{deploy_to}/#{current_path} && npm install"
+  queue "cd #{deploy_to}/#{current_path} && npm install"
+  queue "cd #{deploy_to}/#{current_path} && grunt dist"
+end
+
 desc "Deploys the current version to the server."
 task :deploy => :environment do
   deploy do
@@ -50,10 +56,7 @@ task :deploy => :environment do
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
-
-    queue "cd #{deploy_to}/#{current_path} && npm install"
-    queue "cd #{deploy_to}/#{current_path} && npm install"
-    queue "cd #{deploy_to}/#{current_path} && grunt dist"
+    invoke :'compile'
 
     to :launch do
       queue "touch #{deploy_to}/tmp/restart.txt"
