@@ -47,7 +47,7 @@ module.exports = (grunt) ->
     coffee:
       compile:
         files:
-          "js/app.js": "coffee/app.coffee"
+          "js/_app.js": "coffee/app.coffee"
 
     assemble:
       options:
@@ -58,9 +58,16 @@ module.exports = (grunt) ->
         src: "partials/index.hbs"
         dest: "dist/index.html"
 
+    bower_concat:
+      all:
+        dest: "js/_libs.js"
+        exclude: "modernizr"
+        bowerOptions:
+          relative: false
+
     concat:
       js:
-        src: ["js/libs/*", "js/app.js"]
+        src: ["js/_libs.js", "js/_app.js"]
         #put it in dist/
         dest: "dist/js/ethanmullercom.js"
 
@@ -107,32 +114,25 @@ module.exports = (grunt) ->
       }
     }
 
-    plato:
-      complexity:
-        files:
-          'reports/js-complexity': ['dist/**/*.js']
-
   grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-compass"
   grunt.loadNpmTasks "grunt-contrib-concat"
+  grunt.loadNpmTasks "grunt-bower-concat"
   grunt.loadNpmTasks "grunt-cucumber"
   grunt.loadNpmTasks "grunt-notify"
   grunt.loadNpmTasks "grunt-exec"
-  grunt.loadNpmTasks "grunt-plato"
   grunt.loadNpmTasks "grunt-contrib-copy"
   grunt.loadNpmTasks "assemble"
 
-  grunt.registerTask "bower", [ "copy:bower_jquery" ]
-  
   # NOTE: this has to wipe out everything
-  grunt.registerTask "root-canal", [ "clean:all", "bower", "copy:main"]
+  grunt.registerTask "root-canal", [ "clean:all", "copy:main"]
 
   # Clean, compile and concatenate JS
-  grunt.registerTask "javascript:dev", [ "coffee", "concat:js", "cucumberjs", "plato" ]
+  grunt.registerTask "javascript:dev", [ "coffee", "bower_concat", "concat:js", "cucumberjs"]
 
-  grunt.registerTask "javascript:dist", [ "coffee", "concat:js", "cucumberjs" ]
+  grunt.registerTask "javascript:dist", [ "coffee", "bower_concat", "concat:js", "cucumberjs" ]
 
   # Production task
   grunt.registerTask "dev", [ "root-canal", "javascript:dev", "compass:dev", "assemble"]
