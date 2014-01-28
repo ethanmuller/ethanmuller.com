@@ -47,7 +47,7 @@ module.exports = (grunt) ->
     coffee:
       compile:
         files:
-          "js/_app.js": "coffee/app.coffee"
+          "js/_app.js": "coffee/*.coffee"
 
     assemble:
       options:
