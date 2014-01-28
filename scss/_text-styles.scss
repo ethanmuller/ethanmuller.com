@@ -1,8 +1,8 @@
-.t--highlight {
-  color: darken($c--dark, 30%);
+.t__highlight {
+  color: darken($c__dark, 30%);
 }
 
-.t--long-reading {
+.t__long-reading {
   // Wrap body copy in this text. Optimized for readability.
 
   font-size: 1.2em;
@@ -10,5 +10,18 @@
 
   @include sb-media(30em){
     font-size: 1.4em;
+  }
+}
+
+.t__default-link {
+  color: #EE0000;
+
+  text-decoration: none;
+  border-bottom: 1px solid;
+
+  padding-bottom: 0.1em;
+
+  &.sparkbox {
+    color: #50B7C8;
   }
 }
