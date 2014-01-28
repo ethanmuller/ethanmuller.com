@@ -5,12 +5,6 @@ module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON("package.json")
 
-    connect:
-      server:
-        options:
-          port: 5000
-          base: "dist/"
-
     watch:
 
       stylesheets:
@@ -128,7 +122,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-exec"
   grunt.loadNpmTasks "grunt-plato"
   grunt.loadNpmTasks "grunt-contrib-copy"
-  grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "assemble"
 
   grunt.registerTask "bower", [ "copy:bower_jquery" ]
@@ -142,7 +135,7 @@ module.exports = (grunt) ->
   grunt.registerTask "javascript:dist", [ "coffee", "concat:js", "cucumberjs" ]
 
   # Production task
-  grunt.registerTask "dev", [ "root-canal", "javascript:dev", "compass:dev", "assemble", "connect", "watch"]
+  grunt.registerTask "dev", [ "root-canal", "javascript:dev", "compass:dev", "assemble"]
 
   grunt.registerTask "dist", [ "root-canal", "javascript:dist", "compass:dist", "assemble" ]
 
