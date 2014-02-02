@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<style type="text/css" media="screen">
+			* {
+				padding: 0;
+				border: 0;
+				margin: 0;
+			}
+			body {
+				background-color: #fff;
+			}
+			#wrapper {
+				text-align: center;
+				width: 900px;
+				margin: 0 auto;
+			}
+			#header {
+				margin: 20px 0 0 0;
+				height: 103px;
+				clear: both;
+			}
+			#header a {
+				display: block;
+				width: 482px;
+				height: 103px;
+				margin: 0 auto;
+				background-image: url("http://www.ethanmuller.com/goofydoodles/img/goofy_doodles.gif");
+				text-indent: -999em;
+			}
+			#header a:hover {
+				background-image: url("http://www.ethanmuller.com/goofydoodles/img/goofy_doodles_ani.gif");
+			}
+			#content {
+				width: 580px;
+				height: 500px;
+				margin: 0 auto;
+				padding: 30px 0 0 0;
+				clear: both;
+			}
+			#content #doodle {
+				clear: both;
+			}
+			#nav {
+				position: relative;
+				overflow: visible;
+				width: 400px;
+				height: 60px;
+				margin: 0 auto;
+				clear: both;
+			}
+			#next, #previous {
+				position: absolute;
+				display: block;
+				width: 90px;
+				height: 60px;
+			}
+			#next img, #previous img {
+				display: block;
+				width: 90px;
+				height: 60px;
+			}
+			#next {
+				right: 0;
+			}
+			#previous {
+				left: 0;
+			}
+			#content #random {
+				position: absolute;
+				display: block;
+				width: 100px;
+				left: 50%;
+				margin: 15px auto 0 -50px;
+			}
+			#content #random a {
+				display: block;
+				width: 100px;
+				height: 21px;
+				margin-top: -20px;
+				padding: 20px 0 20px 0;
+				background-image: url("http://www.ethanmuller.com/goofydoodles/img/random.gif");
+				background-position: center ;
+				background-repeat: no-repeat;
+				text-indent: -999em;
+			}
+			#content #random a:hover {
+				background-image: url("http://www.ethanmuller.com/goofydoodles/img/random_ani.gif");
+			}
+		</style>
+
+		<script type="text/javascript" charset="utf-8">
+			<!--
+
+			function swapImageOut(imageId){
+				document.getElementById(imageId).firstChild.firstChild.src = ('http://www.ethanmuller.com/goofydoodles/img/' + imageId + '_ani.gif');
+			}
+
+function swapImageBack(imageId){
+	document.getElementById(imageId).firstChild.firstChild.src = ('http://www.ethanmuller.com/goofydoodles/img/' + imageId + '.gif');
+}
+
+var images = new Array();
+
+function preload() {
+	for (i = 0; i < preload.arguments.length; i++) {
+		images[i] = new Image()
+			images[i].src = preload.arguments[i]
+	}
+}
+preload(
+		"http://www.ethanmuller.com/goofydoodles/img/goofy_doodles_ani.gif",
+		"http://www.ethanmuller.com/goofydoodles/img/previous_ani.gif",
+		"http://www.ethanmuller.com/goofydoodles/img/next_ani.gif",
+		"http://www.ethanmuller.com/goofydoodles/img/random_ani.gif"
+		)
+
+-->
+</script>
+<title>Goofy Doodles</title>
+</head>
+
+<body onload="preload()">
+	<div id="wrapper">
+		<div id="header">
+			<h1><a href="http://goofydoodles.tumblr.com" title="Goofy Doodles">Goofy Doodles</a></h1>
+		</div>
+		<div id="content">
+			{block:Posts}
+			{block:Photo}
+			<img id="doodle" src="{PhotoURL-400}" alt="{PhotoAlt}" />
+			{/block:Photo}
+			{/block:Posts}
+
+			<div id="nav">
+				{block:NextPage}
+				<div id="previous"><a href="{NextPage}"><img src="http://www.ethanmuller.com/goofydoodles/img/previous.gif" alt="previous" title="Previous Doodle" onmouseover="swapImageOut(this.parentNode.parentNode.id)" onmouseout="swapImageBack(this.parentNode.parentNode.id)" /></a></div>
+				{/block:NextPage}
+
+				<script type="text/javascript">
+				if ({TotalPages} > 1) {
+						var randPage = Math.ceil(Math.random() * {TotalPages});
+						document.write('<div id="random"><a href="/page/'+randPage+'">Random</a></div>');
+				}
+				</script>
+
+				{block:PreviousPage}
+				<div id="next"><a href="{PreviousPage}"><img src="http://www.ethanmuller.com/goofydoodles/img/next.gif" alt="next" title="Next Doodle" onmouseover="swapImageOut(this.parentNode.parentNode.id)" onmouseout="swapImageBack(this.parentNode.parentNode.id)" /></a></div>
+				{/block:PreviousPage}
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

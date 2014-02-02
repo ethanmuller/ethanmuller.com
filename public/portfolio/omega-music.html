@@ -1,0 +1,43 @@
+<?php
+
+include("includes/head.php");
+include("includes/sidebar.php");
+include("includes/nav.php");
+include("includes/portfolio-grid.php");
+include("includes/footer.php");
+
+$portfolioPieces = parse_ini_file("pieces.ini", true);
+$currentPage = basename($_SERVER['REQUEST_URI'], ".html");
+
+$title = $portfolioPieces[$currentPage][name] . " | Ethan Muller's Portfolio";
+$header = "This is a <strong>responsive website</strong> for <strong>Omega Music,</strong> a record store in Dayton, Ohio.";
+$description = strip_tags($header);
+$tags = Array('omega music', 'omega music dayton', 'omega music website', 'record store website', 'music website');
+
+?>
+<?php printHead($title, $description, $tags); ?>
+<?php printSidebar($portfolioPieces, $currentPage); ?>
+
+			<div class="content"><!-- start .content -->
+
+				<header><!-- start header -->
+
+					<h1><?php echo $header; ?></h1>
+					
+				</header><!-- end header -->
+
+				<img src="img/portfolio/omega-music/mockups.jpg" alt="website mockups" />
+				<img src="img/portfolio/omega-music/laptop.jpg" alt="Omega Music website" style="max-width: 1024px" />
+				<img src="img/portfolio/omega-music/layout.jpg" alt="website sizes" />
+
+				<hr />
+
+				<?php printPortfolioGrid($portfolioPieces, $currentPage); ?>
+
+			</div><!-- end .content -->
+
+<?php printFooter(); ?>
+
+	</body>
+
+</html>

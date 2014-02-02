@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/* CSS Document */
+
+ul#navigation li a {
+	-webkit-transition: background-color 0.25s linear, color 0.25s linear, text-shadow 0.25s linear, line-height .1s linear;
+	-moz-transition: background-color 0.25s linear, color 0.25s linear, text-shadow 0.25s linear, line-height .1s linear;
+	-transition: background-color 0.25s linear, color 0.25s linear, text-shadow 0.25s linear, line-height .1s linear;
+}
+
+#news a {
+	-webkit-transition: color 0.25s linear;
+	-moz-transition: color 0.25s linear;
+	transition: color 0.25s linear;
+}
+
+#time_and_place #location a {
+	-webkit-transition: color 0.25s linear;
+	-moz-transition: color 0.25s linear;
+	transition: color 0.25s linear;
+}
+
+#events a {
+	-webkit-transition: color 0.25s linear;
+	-moz-transition: color 0.25s linear;
+	transition: color 0.25s linear;
+}
+
+#footer ul li a {
+	-webkit-transition: color 0.25s linear;
+	-moz-transition: color 0.25s linear;
+	transition: color 0.25s linear;
+}

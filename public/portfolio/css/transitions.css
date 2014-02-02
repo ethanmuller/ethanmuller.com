@@ -1,0 +1,39 @@
+nav > ul > li  a {
+	-moz-transition: background-color .2s;
+	-webkit-transition: background-color .2s;
+	transition: background-color .2s;
+}
+
+.content .portfolio-grid .item a img {
+	-moz-transition: opacity .2s linear;
+	-webkit-transition: opacity .2s linear;
+	transition: opacity .2s linear;
+}
+
+.content .portfolio-grid .item a .details {
+	-moz-transition: opacity .2s linear .2s;
+	-webkit-transition: opacity .2s linear .2s;
+	transition: opacity .2s linear .2s;
+}
+
+.sidebar .logo img {
+	-moz-transition: margin-top .5s;
+	-webkit-transition: margin-top .5s;
+	transition: margin-top .5s;
+}
+
+.content a {
+	-moz-transition: color .5s;
+	-webkit-transition: color .5s;
+	-transition: color .5s;
+}
+
+.content input, .content textarea {
+	-moz-transition: background-color .25s, color .25s;
+}
+
+.content button.send-mail {
+	-moz-transition: background-position .5s, background-color .25s;
+	-webkit-transition: background-position .5s, background-color .25s;
+	-transition: background-position .5s, background-color .25s;
+}

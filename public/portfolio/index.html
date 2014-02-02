@@ -1,0 +1,37 @@
+<?php
+
+include("includes/head.php");
+include("includes/sidebar.php");
+include("includes/nav.php");
+include("includes/portfolio-grid.php");
+include("includes/footer.php");
+
+$portfolioPieces = parse_ini_file("pieces.ini", true);
+$currentPage = basename($_SERVER['REQUEST_URI'], ".html");
+
+$title = "Ethan Muller's Portfolio";
+$header = "I’m <strong>Ethan Muller</strong> and I’m a ridiculously meticulous graphic designer.";
+$description = strip_tags($header);
+$tags = Array('ethan muller', 'ethan muller design', 'graphic design dayton', 'graphic designer dayton', 'dayton design', 'dayton designer');
+
+?>
+<?php printHead($title, $description, $tags); ?>
+<?php printSidebar($portfolioPieces, $currentPage); ?>
+
+			<div class="content"><!-- start .content -->
+
+				<header><!-- start header -->
+
+					<h1><?php echo $header; ?></h1>
+					
+				</header><!-- end header -->
+
+				<?php printPortfolioGrid($portfolioPieces, $currentPage); ?>
+
+			</div><!-- end .content -->
+
+<?php printFooter(); ?>
+
+	</body>
+
+</html>

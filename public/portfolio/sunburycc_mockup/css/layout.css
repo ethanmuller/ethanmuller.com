@@ -1,0 +1,492 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*
+
+
+      _/_/_/                      _/                                      
+   _/        _/    _/  _/_/_/    _/_/_/    _/    _/  _/  _/_/  _/    _/   
+    _/_/    _/    _/  _/    _/  _/    _/  _/    _/  _/_/      _/    _/    
+       _/  _/    _/  _/    _/  _/    _/  _/    _/  _/        _/    _/     
+_/_/_/      _/_/_/  _/    _/  _/_/_/      _/_/_/  _/          _/_/_/      
+                                                                 _/       
+                                                            _/_/          
+                                                                       
+     _/_/_/  _/                  _/              _/      _/                     
+  _/        _/_/_/    _/  _/_/        _/_/_/  _/_/_/_/        _/_/_/  _/_/_/    
+ _/        _/    _/  _/_/      _/  _/_/        _/      _/  _/    _/  _/    _/   
+_/        _/    _/  _/        _/      _/_/    _/      _/  _/    _/  _/    _/    
+ _/_/_/  _/    _/  _/        _/  _/_/_/        _/_/  _/    _/_/_/  _/    _/  
+
+
+    
+      _/_/_/  _/                                      _/       
+  _/        _/_/_/    _/    _/  _/  _/_/    _/_/_/  _/_/_/    
+ _/        _/    _/  _/    _/  _/_/      _/        _/    _/   
+_/        _/    _/  _/    _/  _/        _/        _/    _/    
+ _/_/_/  _/    _/    _/_/_/  _/          _/_/_/  _/    _/                                                                         
+
+
+*/
+
+
+/* __________ MISC __________ */
+
+body {
+	margin: 0px auto;
+	padding: 0px;
+}
+
+a:focus {
+	outline: none;
+	border: 0px;
+}
+
+#wrapper {
+	width: 1020px;
+	margin: 0px auto;
+}
+
+
+/* __________ masthead __________ */
+
+#masthead_container {
+	height: 211px;
+	background-image: url(../images/png/masthead_container_bg.png);
+	background-repeat: repeat-x;
+	overflow: hidden;
+	clear: both;
+}
+
+#masthead {
+	width: 1020px;
+	height: 211px;
+	background-image: url(../images/png/masthead_bg.png);
+	background-repeat: repeat-x;
+	margin: 0px auto;
+	overflow: hidden;
+	clear: both;
+}
+
+#masthead h1 {
+	width: 597px;
+	margin: 0px auto 0px 200px;
+}
+
+#masthead h1 a {
+	/* Text is indented out of view in __typography.css__
+	so only the background image is visible. */
+	display: block;
+	width: 597px;
+	height: 176px;
+	background-image: url(../images/png/logo_masthead.png);
+}
+
+
+/* __________ navigation __________ */
+
+ul#navigation {
+	background-color: transparent;
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+	position: relative;
+	left: 337px;
+	top: -25px;
+	z-index: 10000;
+}
+
+ul#navigation li {
+	display: inline;
+	padding: 0px;
+	border: 0px;
+	margin: 0px;
+}
+
+ul#navigation li a {
+	/*	top-left and top-right borders rounded
+			bottom-left and bottom-right NOT rounded */
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	-moz-border-top-left-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	-moz-border-bottom-left-radius: 0px;
+	-moz-border-bottom-right-radius: 0px;
+	-webikit-border-top-left-radius: 10px;
+	-webikit-border-top-right-radius: 10px;
+	-webikit-border-bottom-left-radius: 0px;
+	-webikit-border-bottom-right-radius: 0px;
+	display: block;
+	float: left;
+	height: 38px;
+	padding: 10px 13px 0px 13px;
+	border: 0px;
+	margin: 0px 6px 0px 0px;
+}
+
+ul#navigation li a:link,
+ul#navigation li a:visited {
+}
+
+ul#navigation li a:hover,
+ul#navigation li a:active {
+	/* if the user's browser doesn't support the rgba filter,
+	it will fall back to the first background declaration.
+	background shorthand must be used in this case */
+	background: transparent url(../images/png/nav_item_bg_hover.png) repeat;
+	background: rgba(0, 0, 0, 0.25);
+}
+
+ul#navigation li a.current:link,
+ul#navigation li a.current:visited,
+ul#navigation li a.current:hover,
+ul#navigation li a.current:active {
+	background-color: transparent;
+	background-image: url(../images/png/nav_item_bg_current.png);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	border-top: 1px solid #7c3030;
+	border-right: 1px solid #7c3030;
+	border-bottom: 0px solid #7c3030;
+	border-left: 1px solid #7c3030;
+	height: 38px;
+}
+
+
+/* __________ content __________ */
+
+#content_container {
+	background-image: url(../images/png/content_container_bg.png);
+	clear: both;
+}
+
+#content {
+	width: 1020px;
+	background-image: url(../images/jpg/body_bg.jpg);
+	background-position: center top;
+	background-repeat: no-repeat;
+	padding: 25px 0px 0px 0px;
+	margin: 0px auto;
+	overflow: auto;
+	clear: both;
+}
+
+#slider {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	margin: 0px auto 15px auto;
+	clear: both;
+}
+
+#col_a {
+	float: left;
+	width: 580px;
+	overflow: visible;
+}
+
+#col_b {
+	float: left;
+	width: 440px;
+	overflow: visible;
+}
+
+
+/* __________ news __________ */
+
+#news {
+	display: block;
+	background-color: transparent;
+	background-image: url(../images/png/news_shadow.png);
+	background-repeat: no-repeat;
+	background-position: top center;
+	/* total dimensions:  574px x 344px */
+	width: 520px;
+	height: 312px;
+	padding: 5px 26px 27px 28px;
+	border: 0px;
+	margin: 0px 0px 10px 6px;
+}
+
+#news #news_header {
+	position: relative;
+	background-color: transparent;
+	background-image: url(../images/png/news_header_bg.png);
+	background-repeat: no-repeat;
+	width: 520px;
+	height: 40px;
+	overflow: hidden;
+}
+
+#news h2 {
+	position: absolute;
+	left: 14px;
+	top: 11px;
+	background-color: transparent;
+	background-image: url(../images/png/news_header.png);
+	background-repeat: no-repeat;
+	width: 156px;
+	height: 18px;
+}
+
+#news .more {
+	display: block;
+	position: absolute;
+	right: 14px;
+}
+
+#news ul#newslist {
+	width: 429px;
+}
+
+#news ul#newslist li {
+	list-sytle-type: none;
+}
+
+#news ul#newslist li a {
+	display: block;
+	background-color: #0f0;
+	width: 426px;
+	height: 68px;
+	margin: 0px auto;
+	border: 0px;
+	padding: 0px 80px 0px 14px;
+	clear: both;
+}
+
+#news ul#newslist li a:link,
+#news ul#newslist li a:visited {
+	background-color: transparent;
+	background-image: url(../images/png/news_item_bg_all.png);
+	background-repeat: no-repeat;
+}
+
+#news ul#newslist li a:hover,
+#news ul#newslist li a:active {
+	background-color: transparent;
+	/* if this background-position isn't !important,
+	the background will disappear for anything other than
+	the first article. */
+	background-position: 0px 0px !important;
+	background-image: url(../images/png/news_item_bg_on.png);
+	background-repeat: no-repeat;
+}
+
+/* the backgrounds for all article links are in a single file:  __news_item_bg_all.png__.
+Each background-position y value is offset by (n-1)*(68)*(-1), where n is the article number.
+This isn't nearly as complicated as it sounds. It just sounded cool that way. */
+
+#news ul#newslist li a#article_1 {
+	background-position: 0px 0px;
+}
+
+#news ul#newslist li a#article_2 {
+	background-position: 0px -68px;
+}
+
+#news ul#newslist li a#article_3 {
+	background-position: 0px -136px;
+}
+
+#news ul#newslist li a#article_4 {
+	background-position: 0px -204px;
+}
+
+
+/* __________ time_and_place __________ */
+
+#time_and_place {
+	width: 530px;
+	padding: 0px 0px 0px 50px;
+	margin: 0px 0px 33px 0px;
+	overflow: auto;
+}
+
+#time_and_place h2 {
+	margin: 0px 0px 15px 0px;
+}
+
+#time_and_place #schedule {
+	width: 327px;
+	float: left;
+}
+
+#time_and_place #schedule table {
+	width: 327px;
+	clear: both;
+}
+
+#time_and_place #schedule td.event {
+}
+
+#time_and_place #schedule td.time {
+	width: 130px;
+	padding: 0px 7px 0px 0px
+}
+
+#time_and_place #location {
+	width: 168px;
+	margin: 10px 0px 0px 13px;
+	float: left;
+}
+
+#time_and_place #location img {
+	margin: 0px 0px 15px 0px;
+}
+
+#time_and_place #location span {
+	display: block;
+}
+
+
+/* __________ family_night __________ */
+
+#family_night {
+	width: 516px;
+	height: 160px;
+	border: 3px solid #1a1202;
+	margin: 0px 0px 0px 36px;
+}
+
+
+/* __________ events __________ */
+
+#events {
+	margin: 22px 0px 27px 0px;
+}
+
+#events h2 {
+	background-color: transparent;
+	background-image: url(../images/png/events_header.png);
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 10px;
+	margin: 0px 0px 33px 0px;
+}
+
+#events table {
+	width: 379px;
+	margin: 0px auto 0px 12px;
+}
+
+#events table td {
+	padding: 0px 0px 33px 0px;
+}
+
+#events table td.event {
+}
+
+#events table td.time {
+	width: 105px;
+}
+
+#events .more {
+	margin: 0px 0px 0px 12px;
+}
+
+
+/* __________ we_believe __________ */
+
+#we_believe {
+	position: relative;
+	left: -14px;
+	background-color: transparent;
+	background-image: url(../images/png/we_believe_bg.png);
+	background-repeat: no-repeat;
+	/* total size: 428px x 482px */
+	width: 376px;
+	height: 448px;
+	padding: 34px 30px 0px 22px;
+}
+
+#we_believe h2 {
+	background-color: transparent;
+	background-image: url(../images/png/we_believe.png);
+	background-repeat: no-repeat;
+	width: 195px;
+	height: 29px;
+	margin: 0px auto 25px auto;;
+}
+
+#we_believe ul {
+	list-style: none;
+}
+
+#we_believe ul li {
+	background-image: url(../images/png/we_believe_bullet.png);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	padding: 0px 0px 0px 23px;
+	margin: 0px 0px 22px 0px;
+}
+
+#we_believe ul li span.passage {
+	display: block;	
+	margin: 0px 0px 10px 0px;
+}
+
+#we_believe ul li span.reference {
+	display: block;
+}
+
+
+/* __________ footer __________ */
+
+#footer_container {
+	background-color: #1f1c16;
+	background-image: url(../images/gif/footer_seam.gif);
+	background-position: top;
+	background-repeat: repeat-x;
+	margin: -20px 0px 0px 0px;
+	overflow: auto;
+}
+
+#footer {
+	width: 940px;
+	padding: 130px 0px 0px 0px;
+	margin: 0px auto;
+}
+
+#footer_col_1 {
+	width: 220px;
+	height: 155px;
+	margin: 0px 0px 30px 0px;
+	float: left;
+}
+
+#footer_col_2,
+#footer_col_3,
+#footer_col_4 {
+	width: 180px;
+	height: 155px;
+	padding: 0px 0px 0px 60px;
+	margin: 0px 0px 30px 0px;
+	float: left;
+}
+
+#footer h3.logo {
+	background-image: url(../images/png/footer_logo.png);
+	background-repeat: none;
+	width: 214px;
+	height: 51px;
+	margin: -12px 0px 0px -40px;
+}
+
+#footer h3.category {
+	background-image: url(../images/png/footer_bullet.png);
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	padding: 0px 0px 0px 19px;
+	margin: 0px 0px 25px -19px;
+}
+
+#footer address {
+	margin: -3px 0px 0px 0px;
+}
+
+#footer #copyright {
+	margin: 0px 0px 30px 0px;
+	clear: both;
+}

@@ -1,0 +1,60 @@
+<?php
+
+include("includes/head.php");
+include("includes/sidebar.php");
+include("includes/nav.php");
+include("includes/portfolio-grid.php");
+include("includes/footer.php");
+
+$portfolioPieces = parse_ini_file("pieces.ini", true);
+$currentPage = basename($_SERVER['REQUEST_URI'], ".html");
+
+$title = $portfolioPieces[$currentPage][name] . " | Ethan Muller's Portfolio";
+$header = "This is <strong>Captain Expedition.</strong> He's a <strong>character</strong> I made.";
+$description = strip_tags($header);
+$tags = Array('captain expedition', 'captain expedition character');
+$includeJquery = true;
+
+?>
+<?php printHead($title, $description, $tags, $includeJquery); ?>
+<?php printSidebar($portfolioPieces, $currentPage); ?>
+
+			<div class="content"><!-- start .content -->
+
+				<header><!-- start header -->
+
+					<h1><?php echo $header; ?></h1>
+					
+				</header><!-- end header -->
+
+				<img src="img/portfolio/captain-expedition/capt_technical.jpg" alt="the anatomy of Captain Expedition" />
+				<img src="img/portfolio/captain-expedition/capt_painting.jpg" alt="Captain Expedition painting" />
+
+				<!-- this wild setup is used instead of an <embed> so that things can be fluid -->
+				<div class="animation">
+					<iframe src="img/portfolio/captain-expedition/capt_animation.swf"></iframe>
+				</div>
+				<script type="text/javascript">
+					function setAnimationHeight(){
+						var width = $('.animation').width();
+						var ratio = 9/6;
+						var height = width/ratio;
+						$('.animation iframe').css('height', height);
+					}
+					setAnimationHeight();
+					$(window).resize(function(){ setAnimationHeight(); });
+				</script>
+
+				<img src="img/portfolio/captain-expedition/capt_sprite.gif" alt="Captain Expedition sprite" style="display: block; width: 128px; padding: 3em; margin: 0 auto;" />
+
+				<hr />
+
+				<?php printPortfolioGrid($portfolioPieces, $currentPage); ?>
+
+			</div><!-- end .content -->
+
+<?php printFooter(); ?>
+
+	</body>
+
+</html>
