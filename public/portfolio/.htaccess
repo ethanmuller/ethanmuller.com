@@ -1,4 +1,0 @@
-addDefaultCharset utf-8
-AddType application/x-httpd-php .html
-php_value magic_quotes_gpc off
-ErrorDocument 404 /404.html
