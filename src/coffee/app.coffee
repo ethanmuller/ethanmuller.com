@@ -16,7 +16,7 @@ colorPairs = [
 ]
 
 if cutsTheMustard
-  logoEl = document.querySelector('.logo')
+  logoEl = document.querySelector('.logo-container')
 
   boop = (ev) ->
     ev.preventDefault()
@@ -39,9 +39,5 @@ if cutsTheMustard
     # rapid clicking causes selected text...
     window.getSelection().removeAllRanges()
 
-
-
-  logoEl.addEventListener 'touchend', boop
+  #logoEl.addEventListener 'touchend', boop
   logoEl.addEventListener 'click', boop
-
-  delay = (delay, fn) -> setTimeout fn, delay
