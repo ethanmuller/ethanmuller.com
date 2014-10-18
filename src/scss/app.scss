@@ -5,19 +5,24 @@ $dark: #676767;
 $link: #FF287A;
 
 body {
-  font: 1.1em/1.8 Courier, "Courier New", monospace;
+  font: 1.2em/1.8 Courier, "Courier New", monospace;
 
   background: $light;
   color: $dark;
 
-  padding: 1em;
+  padding: 1.5em;
   margin: 0;
 
   text-align: center;
 
   @media (min-width: 40em){
-    font-size: 1.4em;
+    font-size: 1.5em;
   }
+}
+
+.wrappy-mcgee {
+  max-width: 22em;
+  margin: 0 auto;
 }
 
 p {
@@ -25,8 +30,10 @@ p {
 }
 
 ul {
+  @include clearfix;
+
   list-style: none;
-  margin: 1em 0;
+  margin: 0 -6%;
   padding: 0;
 
   li {
@@ -37,11 +44,13 @@ ul {
 a {
   color: $link;
 
-  display: inline-block;
+  display: block;
 
-  font-size: 1.1em;
-  padding: 0.5em 1em;
-  margin-bottom: 1em;
+  text-align: center;
+
+  font-size: 1.1em; 
+  padding: 0.5em 1em; 
+  margin-bottom: 1em; 
 
   border-width: 2px;
   border-style:  solid;
@@ -51,12 +60,12 @@ a {
   outline: none;
 
   @include transform(scale(0.9) translate3d(0,0,0));
+  @include transition(transform 0.3s cubic-bezier(0.175, 0.885, 0.320, 1.275));
 
   &:hover,
   &:active,
   &:focus{
     @include transform(scale(1) translate3d(0,0,0));
-    @include transition(transform 0.3s cubic-bezier(0.175, 0.885, 0.320, 1.275));
 
     background: $link;
     color: $light;
