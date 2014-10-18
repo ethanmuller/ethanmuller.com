@@ -4,6 +4,10 @@ $light: #efefef;
 $dark: #676767;
 $link: #FF287A;
 
+$c-twitter: rgb(89, 173, 235);
+$c-posts: #1c4c55;
+$c-doodles: #ff6805;
+
 body {
   font: 1.2em/1.8 Courier, "Courier New", monospace;
 
@@ -42,7 +46,17 @@ ul {
 }
 
 a {
-  color: $link;
+  &.twitter {
+    color: darken($c-twitter, 10%);
+  }
+
+  &.posts {
+    color: $c-posts;
+  }
+
+  &.doodles {
+    color: $c-doodles;
+  }
 
   display: block;
 
@@ -66,9 +80,22 @@ a {
   &:active,
   &:focus{
     @include transform(scale(1) translate3d(0,0,0));
+    color: white;
 
-    background: $link;
-    color: $light;
+    &.twitter {
+      background-color: $c-twitter;
+      border-color: $c-twitter;
+    }
+
+    &.posts {
+      background-color: $c-posts;
+      border-color: $c-posts;
+    }
+
+    &.doodles {
+      background-color: $c-doodles;
+      border-color: $c-doodles;
+    }
   }
 }
 
