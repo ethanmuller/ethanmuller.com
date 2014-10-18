@@ -1,0 +1,36 @@
+{
+  "name": "ethanmuller.com",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "coffee-script": "^1.7.1",
+    "del": "^0.1.1",
+    "gulp": "^3.8.6",
+    "gulp-coffee": "^2.1.1",
+    "gulp-concat": "^2.3.3",
+    "gulp-if": "^1.2.2",
+    "gulp-minify-css": "^0.3.6",
+    "gulp-plumber": "^0.6.3",
+    "gulp-sass": "^0.7.2",
+    "gulp-sourcemaps": "^1.2.4",
+    "gulp-uglify": "^0.3.1",
+    "gulp-util": "^2.2.20",
+    "gulp-webserver": "^0.6.0",
+    "lodash": "^2.4.1",
+    "main-bower-files": "^1.0.0",
+    "ncp": "^0.6.0",
+    "node-bourbon": "^1.2.3",
+    "require-dir": "^0.1.0",
+    "run-sequence": "^0.3.6",
+    "yargs": "^1.2.6"
+  },
+  "dependencies": {}
+}
