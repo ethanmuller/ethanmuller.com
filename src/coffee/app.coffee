@@ -39,5 +39,5 @@ if cutsTheMustard
     # rapid clicking causes selected text...
     window.getSelection().removeAllRanges()
 
-  #logoEl.addEventListener 'touchend', boop
+  logoEl.addEventListener 'touchend', boop
   logoEl.addEventListener 'click', boop
