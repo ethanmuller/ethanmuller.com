@@ -6,11 +6,13 @@ colorPairs = [
   # color pairs for randomized logo
   '#A32BE6'
   '#B4D455'
+  '#EE1D1D'
   '#C1846C'
   '#FF00CE'
   '#EEB91D'
-  '#EE1D1D'
-  '#B4C3A3'
+  '#FF0000'
+  '#00FF00'
+  '#0000FF'
   '#FFF'
   '#676767'
 ]
