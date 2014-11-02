@@ -6,6 +6,7 @@ $dark: #676767;
 $c-twitter: rgb(89, 173, 235);
 $c-posts: #1c4c55;
 $c-doodles: #ff6805;
+$c-email: rgb(200, 71, 217);
 
 body {
   font: 1.2em/1.8 Courier, "Courier New", monospace;
@@ -63,6 +64,10 @@ ul {
     color: $c-doodles;
   }
 
+  &.email {
+    color: $c-email;
+  }
+
   display: block;
 
   text-align: center;
@@ -99,6 +104,11 @@ ul {
     &.doodles {
       background-color: $c-doodles;
       border-color: $c-doodles;
+    }
+
+    &.email {
+      background-color: $c-email;
+      border-color: $c-email;
     }
   }
   &:active {
