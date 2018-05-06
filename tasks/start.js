@@ -1,5 +1,4 @@
 const shell = require('shelljs');
-const map = require('lodash/map');
 
 console.log(`Starting site for ${process.env.NODE_ENV || 'development'}`);
 
@@ -10,7 +9,7 @@ const tasks = {
 };
 
 function parallelTasks(env) {
-  const list = map(tasks[env], task => `"npm run ${task}" `);
+  const list = tasks[env].map(task => `"npm run ${task}" `);
 
   return `parallelshell ${list.join('')}`;
 }

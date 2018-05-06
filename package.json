@@ -12,6 +12,7 @@
     "patterns": "node tasks/patterns.js",
     "copy": "node tasks/copy.js",
     "sass": "node-sass src/scss/ -o dist/css/ --output-style compressed",
+    "postsass": "postcss --use autoprefixer -c ./postcss.config.json --no-map --dir ./dist/css ./dist/css/*.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,11 +22,13 @@
   "license": "ISC",
   "devDependencies": {},
   "dependencies": {
+    "autoprefixer": "^8.4.1",
     "chokidar": "^2.0.3",
     "express": "^4.16.3",
     "node-sass": "^4.9.0",
     "parallelshell": "^3.0.2",
     "postcss": "^6.0.22",
+    "postcss-cli": "^5.0.0",
     "rimraf": "^2.6.2",
     "shelljs": "^0.8.1"
   }
