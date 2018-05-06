@@ -1,4 +1,4 @@
-.shake {
+.bzzzt {
   display: inline-block;
   transform-origin: center center;
 }
@@ -106,8 +106,8 @@
   transform: translate(0, 0) rotate(0); }
 }
 
-.shake:focus,
-.shake:hover {
+.bzzzt:focus,
+.bzzzt:hover {
   animation-name: shake;
   animation-duration: 100ms;
   animation-timing-function: ease-in-out;
