@@ -1,9 +1,18 @@
 $c-bg: #efefef;
 $c-fg: #585874;
 
+$c-a: #5D96BF;
+$c-b: #7F9576;
+$c-c: #CD79A5;
+$c-d: #B37D79;
+
 $primary-font-stack: 'Courier', monospace;
 
 $s-page-margin: 2.7rem;
+
+$bp-split: 65em;
+
+@import 'shake';
 
 html {
   // This prevents text size change on
@@ -16,7 +25,6 @@ body {
   margin: 0;
   padding: 0;
 
-  background-color: $c-bg;
   color: $c-fg;
 
   font-family: $primary-font-stack;
@@ -25,6 +33,10 @@ body {
   line-height: 1.3;
 
   -webkit-font-smoothing: antialiased;
+
+  @media (min-width: $bp-split) {
+    display: flex;
+  }
 }
 
 h1,
@@ -39,6 +51,10 @@ p {
   font-size: 1em;
 
   margin: 0 0 1em;
+}
+
+a {
+  text-decoration: none;
 }
 
 .c-logo {
@@ -63,15 +79,66 @@ p {
 }
 
 .c-intro-text {
-  font-size: 1.25rem;
   font-size: 1.125rem;
 
-  width: calc(100% - #{$s-page-margin * 2});
-  margin: 0 auto;
-  max-width: 17.75em;
+  background-color: $c-bg;
 
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  &__inner {
+    width: calc(100% - #{$s-page-margin * 2});
+    margin: 0 auto;
+    max-width: 17.75em;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (min-width: $bp-split) {
+    flex: 1;
+  }
+}
+
+.c-link-collection {
+  font-size: 1.125rem;
+
+  &__inner {
+    width: calc(100% - #{$s-page-margin * 2});
+    margin: 0 auto;
+    max-width: 17.75em;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (min-width: $bp-split) {
+    flex: 1;
+  }
+}
+
+.c-btn {
+  display: block;
+
+  color: inherit;
+  color: white;
+  border: 2px solid currentColor;
+  font-weight: bold;
+
+  padding: 1rem 1.6rem;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &--a { background-color: $c-a }
+  &--b { background-color: $c-b }
+  &--c { background-color: $c-c }
+  &--d { background-color: $c-d }
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
 }
