@@ -1,3 +1,77 @@
+$c-bg: #efefef;
+$c-fg: #585874;
+
+$primary-font-stack: 'Courier', monospace;
+
+$s-page-margin: 2.7rem;
+
+html {
+  // This prevents text size change on
+  // orientation change
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  appearance: none;
+  margin: 0;
+  padding: 0;
+
+  background-color: $c-bg;
+  color: $c-fg;
+
+  font-family: $primary-font-stack;
+
+  font-size: 1rem;
+  line-height: 1.3;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 1em;
+
+  margin: 0 0 1em;
+}
+
+p {
+  font-size: 1em;
+
+  margin: 0 0 1em;
+}
+
+.c-logo {
+  width: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-bottom: 4rem;
+
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+
+  &__svg {
+    display: block;
+
+    width: 80%;
+    height: auto;
+
+    margin: 0 auto;
+  }
+}
+
+.c-intro-text {
+  font-size: 1.25rem;
+  font-size: 1.125rem;
+
+  width: calc(100% - #{$s-page-margin * 2});
+  margin: 0 auto;
+  max-width: 17.75em;
+
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
