@@ -3,8 +3,10 @@ const shell = require('shelljs');
 console.log(`Starting site for ${process.env.NODE_ENV || 'development'}`);
 
 const tasks = {
-  production: ['copy', 'patterns', 'sass'],
+  production: ['copy', 'patterns', 'sass', 'js'],
 
+  // JS isn't present here because watch
+  // does an initial render.
   development: ['copy', 'patterns', 'sass', 'server', 'watch'],
 };
 
