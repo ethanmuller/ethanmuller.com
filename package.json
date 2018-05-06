@@ -3,6 +3,15 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
+    "prestart": "npm run clean",
+    "start": "node tasks/start.js",
+    "clean": "rimraf dist/",
+    "server": "node tasks/server.js",
+    "watch": "parallelshell 'node tasks/watch.js'",
+    "js": "webpack",
+    "patterns": "node tasks/patterns.js",
+    "copy": "node tasks/copy.js",
+    "sass": "node-sass src/scss/ -o dist/css/ --output-style compressed",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -10,8 +19,14 @@
     "url": ""
   },
   "license": "ISC",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
+    "chokidar": "^2.0.3",
+    "express": "^4.16.3",
+    "node-sass": "^4.9.0",
+    "parallelshell": "^3.0.2",
+    "postcss": "^6.0.22",
+    "rimraf": "^2.6.2",
+    "shelljs": "^0.8.1"
   }
 }
