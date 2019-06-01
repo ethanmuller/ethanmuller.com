@@ -59,16 +59,14 @@ em {
 
   > span {
     animation: wave 1s ease-in-out infinite alternate;
+    animation-fill-mode: both;
     display: inline-block;
 
     $base: 250ms;
 
-    &:nth-child(0){ animation-delay: $base * 0 }
-    &:nth-child(1){ animation-delay: $base * 1 }
-    &:nth-child(2){ animation-delay: $base * 2 }
-    &:nth-child(3){ animation-delay: $base * 3 }
-    &:nth-child(4){ animation-delay: $base * 4 }
-    &:nth-child(5){ animation-delay: $base * 5 }
+    @for $i from 0 through 20 {
+      &:nth-child(#{$i}){ animation-delay: $base * $i }
+    }
   }
 }
 
