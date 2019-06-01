@@ -1,0 +1,68 @@
+.c-box {
+  background: var(--b);
+
+  font-size: 22px;
+
+  border: 3px solid var(--a);
+
+  margin: 0 10px 50px;
+  padding: 26px;
+
+  position: relative;
+
+  box-shadow: 6px 10px rgba(black, 0.07);
+
+  @media (min-width: $bp-boop-labels) {
+    max-width: 490px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  &__heading {
+    padding-bottom: 3px;
+
+    text-transform: uppercase;
+    font-size: 10px;
+    position: absolute;
+
+    bottom: 100%;
+    left: 0;
+
+    @media (min-width: $bp-boop-labels) {
+      right: 100%;
+      left: auto;
+      transform-origin: bottom right;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &:first-of-type {
+    margin-top: 100px;
+  }
+
+  &--intro {
+    --a: black;
+    --b: #fff100;
+  }
+
+  &--bio {
+    --a: #261FA8;
+    --b: #EFFFFC;
+  }
+
+  &--hyperlinks {
+    --a: black;
+    --b: white;
+
+    display: flex;
+    justify-content: center;
+
+    ul {
+      padding: 10vw 0;
+
+      @media (min-width: $bp-boop-labels) {
+        padding: 60px 0;
+      }
+    }
+  }
+}
