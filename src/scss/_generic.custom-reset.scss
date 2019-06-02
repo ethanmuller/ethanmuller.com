@@ -64,16 +64,27 @@ em {
 }
 
 h1 {
+  // position: absolute;
+  // top: 1rem;
+
+  // left: 1rem;
   text-transform: uppercase;
-  font-family: Courier, monospace;
-  font-weight: normal;
-  font-size: 12px;
-  letter-spacing: 4px;
+  // font-family: Courier, monospace;
+  // font-weight: normal;
+  font-size: 10px;
+  letter-spacing: 2px;
 
   text-align: center;
 
   padding: 10px;
-  margin-top: 10vmin;
+  margin: 5vmin 0 10vmin;
+
+
+  @media (min-width: 800px) {
+    text-align: left;
+    padding-right: 2rem;
+    margin: -3rem 0 0 -3rem;
+  }
 }
 
 ul {

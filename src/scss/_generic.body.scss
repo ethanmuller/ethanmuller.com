@@ -5,12 +5,13 @@ body {
 
   font-family: $primary-font-stack;
 
-  font-size: 1rem;
+  font-size: calc(12px + 0.5vw);
+
   line-height: 1.4;
 
   min-height: 100vh;
 
-  max-width: 70em;
+  max-width: 75em;
   margin: 0 auto;
 
   display: grid;
@@ -19,7 +20,7 @@ body {
   padding: 20px 9px 20px 20px;
 
   @media (min-width: 800px) {
-    grid-template-columns: 1fr 17em;
+    grid-template-columns: 4fr 17em;
     grid-template-rows: auto auto;
     grid-gap: 30px;
     align-content: stretch;
@@ -28,19 +29,21 @@ body {
 
     > * {
       display: flex;
-      align-items: center;
+      // align-items: center;
     }
 
     > :nth-child(1) {
-      align-self: end;
+      // align-self: end;
+      grid-column: 1;
     }
 
     > :nth-child(2) {
-      align-self: start;
+      // align-self: start;
+      grid-column: 1;
     }
 
     > :nth-child(3) {
-      grid-column: 2;
+      grid-column-end: -1;
       grid-row: 1 / 3;
     }
   }
