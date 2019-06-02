@@ -2,6 +2,7 @@ body {
   padding: 0;
 
   color: $c-fg;
+  background: $c-bg;
 
   font-family: $primary-font-stack;
 
@@ -27,7 +28,7 @@ body {
 
     padding: 5rem;
 
-    > * {
+    > div {
       display: flex;
     }
 
