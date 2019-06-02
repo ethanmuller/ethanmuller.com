@@ -3,14 +3,15 @@
 
   font-size: 22px;
 
-  border: 3px solid var(--a);
+  color: var(--a);
+  border: 3px solid;
 
   margin: 0 10px 50px;
   padding: 26px;
 
   position: relative;
 
-  box-shadow: 6px 10px rgba(black, 0.07);
+  box-shadow: 6px 10px rgba(0, 139, 187, 0.1);
 
   @media (min-width: $bp-boop-labels) {
     max-width: 480px;
