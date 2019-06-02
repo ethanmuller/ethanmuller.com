@@ -1,20 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   // This prevents text size change on
   // orientation change
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-
-  color: $c-fg;
-
-  font-family: $primary-font-stack;
-
-  font-size: 1rem;
-  line-height: 1.4;
 }
 
 h1,

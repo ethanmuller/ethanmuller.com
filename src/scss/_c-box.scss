@@ -5,17 +5,16 @@
 
   border: 3px solid var(--a);
 
-  margin: 0 10px 50px;
+  // margin: 0 10px 50px;
   padding: 26px;
+
+  width: 100%;
 
   position: relative;
 
   box-shadow: 6px 10px rgba(black, 0.07);
 
   @media (min-width: $bp-boop-labels) {
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
   }
   
   &__heading {
@@ -25,19 +24,16 @@
     font-size: 10px;
     position: absolute;
 
-    bottom: 100%;
-    left: 0;
+    color: black;
 
-    @media (min-width: $bp-boop-labels) {
-      right: 100%;
-      left: auto;
-      transform-origin: bottom right;
-      transform: rotate(-90deg);
-    }
+    right: 100%;
+    bottom: 100%;
+    transform-origin: bottom right;
+    transform: rotate(-90deg);
   }
 
-  &:first-of-type {
-    margin-top: 100px;
+  > p {
+    max-width: 17em;
   }
 
   &--intro {
@@ -48,6 +44,16 @@
   &--bio {
     --a: #261FA8;
     --b: #EFFFFC;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+    grid-gap: 1em;
+    align-content: start;
+    justify-content: start;
+
+    > * {
+      margin: 0;
+    }
   }
 
   &--hyperlinks {
@@ -56,13 +62,7 @@
 
     display: flex;
     justify-content: center;
-
-    ul {
-      padding: 10vw 0;
-
-      @media (min-width: $bp-boop-labels) {
-        padding: 60px 0;
-      }
-    }
+    align-items: center;
+    padding: 2rem 0;
   }
 }
