@@ -1,8 +1,14 @@
 const throttle = require('lodash/throttle');
 const eyes = document.querySelector('.c-eyes');
-const eyesRect = eyes.getBoundingClientRect();
-let eyeCenterX = eyesRect.x + eyesRect.width / 2;
-let eyeCenterY = eyesRect.y + eyesRect.height / 2;
+let eyesRect;
+let eyeCenterX;
+let eyeCenterY;
+
+function setup() {
+  eyesRect = eyes.getBoundingClientRect();
+  eyeCenterX = eyesRect.x + eyesRect.width / 2;
+  eyeCenterY = eyesRect.y + eyesRect.height / 2;
+}
 
 function setEyePos(dx, dy) {
   const radians = Math.atan2(dy, dx);
@@ -41,3 +47,9 @@ if ('ontouchstart' in document.documentElement) {
 } else {
   bindForMouse();
 }
+
+window.addEventListener('resize', () => {
+  setup()
+});
+
+setup()
