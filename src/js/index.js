@@ -1,2 +1,0 @@
-require('./cow');
-require('./eyes');

@@ -1,0 +1,163 @@
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px;
+}
+
+h1, h2, h3, footer {
+  text-transform: lowercase;
+  font-family: 'Major Mono Display', monospace;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  font-weight: 700;
+}
+
+small {
+  font-size: 1rem;
+}
+
+p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  max-width: 19em;
+}
+
+li {
+  margin-bottom: 3rem;
+}
+
+small {
+  display: block;
+}
+
+.o-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "h1"
+    "a"
+    "b"
+    "c";
+
+  min-height: 100vh;
+}
+
+header {
+}
+
+h1, h2 {
+  border-bottom: 1px solid;
+}
+
+footer {
+  border-top: 1px solid;
+}
+
+h1, footer {
+  padding: 1rem 0;
+
+  font-size: 6vw;
+}
+
+@media (min-width: 390px) {
+  h1, footer {
+    font-size: 20px;
+  }
+}
+
+h2 {
+  padding: 1rem 0;
+  margin-bottom: 3rem;
+
+  font-size: 20px;
+
+  border-top: 1px solid;
+
+  position: sticky;
+  top: 0;
+  background: white;
+  box-shadow: 0 0 1.5rem white;
+}
+
+.a {
+  grid-area: a;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 3rem;
+}
+
+.b {
+  grid-area: b;
+}
+
+.d {
+  grid-area: d;
+}
+
+.c {
+  grid-area: c;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.e {
+  grid-area: e;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .o-layout__a { */
+/*   grid-area: a; */
+/*   background: yellow; */
+/* } */
+
+/* .o-layout__b { */
+/*   grid-area: b; */
+/*   background: red; */
+
+/*   display: flex; */
+/*   flex-direction: column; */
+/* } */
+
+/* .o-layout__c { */
+/*   grid-area: c; */
+/*   background: blue; */
+/* } */
+
+.o-layout__alpha {
+}
+
+.o-layout__omega {
+}

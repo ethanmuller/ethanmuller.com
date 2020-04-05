@@ -1,40 +1,45 @@
 {
-  "name": "ethanmuller.com",
-  "version": "0.0.0",
-  "description": "",
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "gatsby": "^2.19.45",
+    "gatsby-image": "^2.2.44",
+    "gatsby-plugin-manifest": "^2.2.48",
+    "gatsby-plugin-offline": "^3.0.41",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+    "gatsby-plugin-react-helmet": "^3.1.24",
+    "gatsby-plugin-sharp": "^2.4.13",
+    "gatsby-source-filesystem": "^2.1.56",
+    "gatsby-transformer-sharp": "^2.3.19",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
   "scripts": {
-    "prestart": "npm run clean",
-    "start": "node tasks/start.js",
-    "clean": "rimraf dist/",
-    "server": "node tasks/server.js",
-    "watch": "parallelshell 'node tasks/watch.js' 'webpack --watch'",
-    "js": "webpack",
-    "patterns": "node tasks/patterns.js",
-    "copy": "node tasks/copy.js",
-    "sass": "node-sass src/scss/ -o dist/css/ --output-style compressed",
-    "postsass": "postcss --use autoprefixer -c ./postcss.config.json --no-map --dir ./dist/css ./dist/css/*.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
-  "license": "ISC",
-  "devDependencies": {},
-  "dependencies": {
-    "autoprefixer": "^8.4.1",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.7.0",
-    "chokidar": "^2.0.3",
-    "express": "^4.16.3",
-    "node-sass": "^4.12.0",
-    "parallelshell": "3.0.1",
-    "postcss": "^6.0.22",
-    "postcss-cli": "^5.0.0",
-    "rimraf": "^2.6.2",
-    "shelljs": "^0.8.1",
-    "webpack": "^4.7.0",
-    "webpack-cli": "^3.1.0"
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
