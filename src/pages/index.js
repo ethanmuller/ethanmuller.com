@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import Hyperlinks from "./Hyperlinks"
 import SkillList from "./SkillList"
 
-import Squeeze from "./Squeeze"
+import Squeeze from "../components/Squeeze"
 
 const socialLinks = [
   {

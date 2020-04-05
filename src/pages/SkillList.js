@@ -1,7 +1,7 @@
 import React from "react"
 
 import skills from "../data/skills"
-import shuffle from "./shuffle"
+import shuffle from "../lib/shuffle"
 
 class SkillList extends React.Component {
   constructor (props) {
