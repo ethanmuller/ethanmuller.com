@@ -9,14 +9,14 @@ const links = [
     d: 'I made a mobile game. There’s not much to it yet, but it’s really fun to play with.',
   },
   {
-    t: 'The Marvelous N-headed Beast',
-    h: 'https://beast.ethanmuller.com',
-    d: 'Let’s try to write a story together. Everybody sees the same words live. You can only say one word at a time.',
-  },
-  {
     t: 'Pico-8 Carts',
     h: 'https://www.lexaloffle.com/bbs/?uid=12911',
     d: 'Little code experiments. You can view them in the browser. You can view the source code.',
+  },
+  {
+    t: 'The Marvelous N-headed Beast',
+    h: 'https://beast.ethanmuller.com',
+    d: 'Let’s try to write a story together. Everybody sees the same words live. You can only say one word at a time.',
   },
   {
     t: 'bandcamp',
