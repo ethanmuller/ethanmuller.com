@@ -63,15 +63,19 @@ small {
   min-height: 100vh;
 }
 
-@media (min-width: 38000px) {
+@media (min-width: 380px) {
   .o-layout {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.4fr 1fr;
     grid-template-areas:
       "hi hi"
       "a a"
       "b d"
       "c e"
       "bye bye";
+  }
+
+  .d, .e {
+    border-left: 1px solid;
   }
 }
 
@@ -105,10 +109,10 @@ h2 {
 
   border-top: 1px solid;
 
-  /* position: sticky; */
-  /* top: 0; */
-  /* background: white; */
-  /* box-shadow: 0 0 1.5em white; */
+  position: sticky;
+  top: -1px;
+  background: white;
+  box-shadow: 0 0 1.5em white;
 }
 
 .hi {
@@ -134,10 +138,6 @@ h2 {
   grid-area: b;
 }
 
-.d {
-  grid-area: d;
-}
-
 .c {
   grid-area: c;
 
@@ -147,10 +147,26 @@ h2 {
   align-items: center;
 }
 
+.d {
+  grid-area: d;
+}
+
 .e {
   grid-area: e;
 
+  padding: 3rem 0;
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+}
+
+.dash-list {
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr; */
+  /* grid-template-columns: repeat( auto-fit, minmax(7em, 1fr) ); */
+}
+
+.dash-list li::before {
+  content: '- ';
 }

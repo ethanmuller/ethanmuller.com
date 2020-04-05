@@ -4,7 +4,7 @@ const Squeeze = (props) => (
     <div style={{
       width: '80%',
       maxWidth: '20em',
-      margin: '3rem 0',
+      margin: '3rem auto',
     }}>{props.children}</div>
 )
 

@@ -13,7 +13,7 @@ const liStyles = {
 const Hyperlink = (props) => {
   return (
     <>
-      <a href={props.item.href} styles={aStyles}>{props.item.title}</a>
+      <a href={props.item.href} style={aStyles}>{props.item.title}</a>
       {props.item.description &&
         <small>{props.item.description}</small>
       }

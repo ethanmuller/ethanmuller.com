@@ -2,8 +2,10 @@ import React from "react"
 
 import SEO from "../components/seo"
 
-import work from "./links"
 import Hyperlinks from "./Hyperlinks"
+import SkillList from "./SkillList"
+
+import work from "../data/links"
 import Squeeze from "./Squeeze"
 
 const socialLinks = [
@@ -20,9 +22,6 @@ const socialLinks = [
     href: 'https://emuuu.bandcamp.com/releases',
   },
 ]
-
-const liStyles = {
-}
 
 const IndexPage = () => (
   <>
@@ -46,8 +45,8 @@ const IndexPage = () => (
           <Hyperlinks links={work} />
           <ul>
             {
-              socialLinks.map(i => (
-                <li style={liStyles}>
+            socialLinks.map(i => (
+                <li>
                   <a style={{
                      display: 'inline-block',
                      padding: '0.5rem 0.5rem  0.5rem 0',
@@ -62,8 +61,12 @@ const IndexPage = () => (
 
       </div>
 
-      <h2 className="d">Skills</h2>
-      <div className="e">asdf</div>
+          <h2 className="d skills">Skills</h2>
+          
+            <div className="e">
+<SkillList />
+</div>
+      
 
       <footer className="bye">Bye I'm Ethan Muller</footer>
     </main>
