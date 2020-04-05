@@ -9,7 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 h1, h2, h3, footer {
@@ -25,29 +25,23 @@ p {
 }
 
 a {
+  display: inline-block;
+
   font-weight: 700;
 }
 
 small {
-  font-size: 1rem;
+  font-size: 1em;
 }
 
 p:not(:last-child) {
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
 }
 
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-li {
-  max-width: 19em;
-}
-
-li {
-  margin-bottom: 3rem;
 }
 
 small {
@@ -58,12 +52,27 @@ small {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
-    "h1"
+    "hi"
     "a"
     "b"
-    "c";
+    "c"
+    "d"
+    "e"
+    "bye";
 
   min-height: 100vh;
+}
+
+@media (min-width: 38000px) {
+  .o-layout {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "hi hi"
+      "a a"
+      "b d"
+      "c e"
+      "bye bye";
+  }
 }
 
 header {
@@ -78,7 +87,7 @@ footer {
 }
 
 h1, footer {
-  padding: 1rem 0;
+  padding: 1em 0;
 
   font-size: 6vw;
 }
@@ -90,17 +99,24 @@ h1, footer {
 }
 
 h2 {
-  padding: 1rem 0;
-  margin-bottom: 3rem;
+  padding: 1em 0;
 
   font-size: 20px;
 
   border-top: 1px solid;
 
-  position: sticky;
-  top: 0;
-  background: white;
-  box-shadow: 0 0 1.5rem white;
+  /* position: sticky; */
+  /* top: 0; */
+  /* background: white; */
+  /* box-shadow: 0 0 1.5em white; */
+}
+
+.hi {
+  grid-area: hi;
+}
+
+.bye {
+  grid-area: bye;
 }
 
 .a {
@@ -111,7 +127,7 @@ h2 {
   justify-content: center;
   align-items: center;
 
-  padding: 3rem;
+  /* padding: 3em; */
 }
 
 .b {
@@ -126,6 +142,7 @@ h2 {
   grid-area: c;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -136,28 +153,4 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* .o-layout__a { */
-/*   grid-area: a; */
-/*   background: yellow; */
-/* } */
-
-/* .o-layout__b { */
-/*   grid-area: b; */
-/*   background: red; */
-
-/*   display: flex; */
-/*   flex-direction: column; */
-/* } */
-
-/* .o-layout__c { */
-/*   grid-area: c; */
-/*   background: blue; */
-/* } */
-
-.o-layout__alpha {
-}
-
-.o-layout__omega {
 }

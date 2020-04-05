@@ -2,83 +2,71 @@ import React from "react"
 
 import SEO from "../components/seo"
 
-const links = [
+import work from "./links"
+import Hyperlinks from "./Hyperlinks"
+import Squeeze from "./Squeeze"
+
+const socialLinks = [
   {
-    t: 'Goofball',
-    h: 'https://goofball.fun',
-    d: 'I made a mobile game. There’s not much to it yet, but it’s really fun to play with.',
+    title: 'twitter',
+    href: 'https://twitter.com/ethanmuller',
   },
   {
-    t: 'Pico-8 Carts',
-    h: 'https://www.lexaloffle.com/bbs/?uid=12911',
-    d: 'Little code experiments. You can view them in the browser. You can view the source code.',
+    title: 'instagram',
+    href: 'https://instagram.com/emuuuuuuuu',
   },
   {
-    t: 'The Marvelous N-headed Beast',
-    h: 'https://beast.ethanmuller.com',
-    d: 'Let’s try to write a story together. Everybody sees the same words live. You can only say one word at a time.',
-  },
-  {
-    t: 'bandcamp',
-    h: 'https://emuuu.bandcamp.com/releases',
-  },
-  {
-    t: 'twitter',
-    h: 'https://twitter.com/ethanmuller',
-  },
-  {
-    t: 'instagram',
-    h: 'https://instagram.com/emuuuuuuuu',
+    title: 'bandcamp',
+    href: 'https://emuuu.bandcamp.com/releases',
   },
 ]
 
-const Hyperlink = (props) => {
-  return (
-    <>
-      <a href={props.item.h}>{props.item.t}</a>
-      {props.item.d &&
-        <small>{props.item.d}</small>
-      }
-    </>
-  );
+const liStyles = {
 }
-
-const Hyperlinks = (props) => {
-  return (
-    <ul>
-      {links.map(item => (
-        <li>
-          <Hyperlink item={item} />
-        </li>
-      ))}
-    </ul>
-  )
-}
-
 
 const IndexPage = () => (
   <>
     <SEO title="Ethan Muller's Website" />
 
-    <div className="o-layout">
+    <main className="o-layout">
       
-      <h1 className="h1">Hi I'm Ethan Muller</h1>
+      <h1 className="hi">Hi I'm Ethan Muller</h1>
       <header className="a">
-        <div style={{maxWidth: '19em'}}>
+        <Squeeze>
           <p>Welcome to my web page.</p>
           <p>I’m a designer/developer.</p>
           <p>I’m interested in the space between design and development.</p>
           <p>I want to build fun and/or meaningful things.</p>
-        </div>
+      </Squeeze>
       </header>
       
       <h2 className="b">Hyper<wbr />links</h2>
       <div className="c">
-        <Hyperlinks />
+        <Squeeze>
+          <Hyperlinks links={work} />
+          <ul>
+            {
+              socialLinks.map(i => (
+                <li style={liStyles}>
+                  <a style={{
+                     display: 'inline-block',
+                     padding: '0.5rem 0.5rem  0.5rem 0',
+                     }} href={i.href}>
+                    {i.title}
+                  </a>
+                </li>
+              ))
+            }
+</ul>
+</Squeeze>
+
       </div>
 
-      <footer>Bye I'm Ethan Muller</footer>
-    </div>
+      <h2 className="d">Skills</h2>
+      <div className="e">asdf</div>
+
+      <footer className="bye">Bye I'm Ethan Muller</footer>
+    </main>
   </>
 )
 
