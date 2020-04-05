@@ -5,7 +5,6 @@ import SEO from "../components/seo"
 import Hyperlinks from "./Hyperlinks"
 import SkillList from "./SkillList"
 
-import work from "../data/links"
 import Squeeze from "./Squeeze"
 
 const socialLinks = [
@@ -42,7 +41,7 @@ const IndexPage = () => (
       <h2 className="b">Hyper<wbr />links</h2>
       <div className="c">
         <Squeeze>
-          <Hyperlinks links={work} />
+          <Hyperlinks />
           <ul>
             {
             socialLinks.map(i => (

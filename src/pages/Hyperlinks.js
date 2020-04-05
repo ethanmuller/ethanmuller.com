@@ -1,5 +1,6 @@
 import React from "react"
 
+import work from "../data/links"
 
 const aStyles = {
   marginBottom: '1em',
@@ -24,7 +25,7 @@ const Hyperlink = (props) => {
 const Hyperlinks = (props) => {
   return (
     <ul>
-      {props.links.map(item => (
+      {work.map(item => (
           <li style={liStyles}>
           <Hyperlink item={item} />
         </li>
