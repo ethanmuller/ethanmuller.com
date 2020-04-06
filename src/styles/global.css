@@ -12,6 +12,16 @@ body {
   font-size: 14px;
 }
 
+@media (min-width: 1000px) {
+  body {
+  }
+  main {
+    max-width: 35rem;
+    margin: 5rem auto;
+    border: 1px solid;
+  }
+}
+
 h1, h2, h3, footer {
   text-transform: lowercase;
   font-family: 'Major Mono Display', monospace;
@@ -112,7 +122,6 @@ h2 {
   position: sticky;
   top: -1px;
   background: white;
-  box-shadow: 0 0 1.5em white;
 }
 
 .hi {
