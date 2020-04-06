@@ -44,6 +44,8 @@ export default [
   "graphic design",
   "sound design",
   "humming",
+  "photography",
+  "music production",
   "knifeplay",
   "massages",
   "dog walking",

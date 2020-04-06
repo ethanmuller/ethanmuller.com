@@ -34,8 +34,8 @@ const IndexPage = () => (
           <p>Welcome to my web page.</p>
           <p>I’m a designer/developer.</p>
           <p>I’m interested in the space between design and development.</p>
-          <p>I want to build fun and/or meaningful things.</p>
-      </Squeeze>
+          <p>I want to build fun and/or meaningful products.</p>
+        </Squeeze>
       </header>
       
       <h2 className="b">Hyper<wbr />links</h2>
