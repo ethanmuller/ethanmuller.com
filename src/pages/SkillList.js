@@ -31,7 +31,7 @@ class SkillList extends React.Component {
     return (
         <ul style={{minWidth: '10rem'}} onClick={this.shuffleList.bind(this)} className="dash-list">
         {
-          this.state.links.slice(0,36).map(i => (
+          this.state.links.slice(0,27).map(i => (
               <li>{i}</li>
           ))
         }

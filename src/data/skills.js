@@ -27,6 +27,7 @@ export default [
   "organizing",
   "thinking",
   "org-mode",
+  "larping",
   "the gimp",
   "classical guitar",
   "tae kwon do",
@@ -62,10 +63,6 @@ export default [
   "scss",
   "git",
   "pdf",
-  "lmao",
-  "lol",
-  "wow",
-  "wtf",
   "ssh",
   "ruby",
 ];
