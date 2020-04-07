@@ -6,6 +6,7 @@ import Hyperlinks from "./Hyperlinks"
 import SkillList from "./SkillList"
 
 import Squeeze from "../components/Squeeze"
+import Opts from "../components/Opts"
 
 const socialLinks = [
   {
@@ -35,6 +36,9 @@ const IndexPage = () => (
           <p>I’m a designer/developer.</p>
           <p>I’m interested in the space between design and development.</p>
           <p>I want to build fun and/or meaningful products.</p>
+          <div style={{'margin-top': '3em'}}>
+            <Opts />
+          </div>
         </Squeeze>
       </header>
       

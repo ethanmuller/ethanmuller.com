@@ -1,3 +1,7 @@
+:root {
+  --fg: #777;
+  --bg: #aaa;
+}
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -10,6 +14,9 @@ body {
 
   font-family: 'IBM Plex Mono', monospace;
   font-size: 14px;
+
+  color: var(--fg);
+  background: var(--bg);
 }
 
 @media (min-width: 1000px) {
@@ -38,6 +45,44 @@ a {
   display: inline-block;
 
   font-weight: 700;
+}
+
+a:link {
+  color: var(--link);
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: var(--link-active);
+}
+
+button {
+  font-family: 'Major Mono Display', monospace;
+  text-transform: lowercase;
+  font-size: 18px;
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+}
+
+button svg {
+  margin-right: 1rem;
+
+  transition: all 0.1s linear;
+}
+
+button[aria-expanded='true'] svg {
+  transform: rotate(180deg);
+}
+
+:focus {
+  outline: 3px solid var(--fg);
 }
 
 small {
@@ -121,7 +166,7 @@ h2 {
 
   position: sticky;
   top: -1px;
-  background: white;
+  background: var(--bg);
 }
 
 .hi {
@@ -178,4 +223,20 @@ h2 {
 
 .dash-list li::before {
   content: '- ';
+}
+
+label {
+  display: block;
+}
+
+/* eventually want to replace this with modular css, */
+/* which could get applied to contained general elements */
+input {
+  margin-right: 1rem;
+}
+
+label {
+  padding: 1rem;
+  font-family: 'Major Mono Display', monospace;
+  text-transform: lowercase;
 }
