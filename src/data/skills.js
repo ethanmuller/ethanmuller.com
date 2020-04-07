@@ -83,7 +83,10 @@ export default [
   "ruby",
   "tools",
   "npm start",
-  "moistenry",
-  "stare",
   "docker compose up",
+  "moistenry",
+  "1d graphics",
+  "2d graphics",
+  "3d graphics",
+  "4d graphics",
 ];
