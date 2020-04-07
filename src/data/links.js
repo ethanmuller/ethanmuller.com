@@ -2,7 +2,7 @@ export default [
   {
     title: 'Goofball',
     href: 'https://goofball.fun',
-    description: 'I made a mobile game. There’s not much to it yet, but it’s really fun to play with.',
+    description: 'I made a mobile game. Touch and drag to play. Hit them from the top.',
   },
   {
     title: 'Pico-8 Carts',
