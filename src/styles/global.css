@@ -1,6 +1,9 @@
 :root {
-  --fg: #777;
-  --bg: #aaa;
+  --fg: black;
+  --bg: white;
+  --link: #001AFF;
+  --link-active: #FF00B8;
+  --link-visited: #A46DC6;
 }
 html {
   font-family: sans-serif;
