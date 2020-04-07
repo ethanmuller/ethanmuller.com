@@ -69,11 +69,13 @@ class Opts extends React.Component {
       open: false,
       selectedTheme: darkModeGuess ? 'night' : 'normal',
     };
-
-    this.setTheme(this.state.selectedTheme)
   }
 
   componentDidMount() {
+    if (document) {
+      this.documentElement = document.documentElement
+    }
+    this.setTheme(this.state.selectedTheme)
   }
 
   componentWillUnmount() {
@@ -87,7 +89,10 @@ class Opts extends React.Component {
     const variables = Object.entries(themes[theme])
     variables.forEach(variable => {
       const [ key, value ] = variable
-      document.documentElement.style.setProperty(key, value)
+
+      if (this.documentElement) {
+        this.documentElement.style.setProperty(key, value)
+      }
     });
   }
 
