@@ -2,7 +2,7 @@ export default [
   {
     title: 'Goofball',
     href: 'https://goofball.fun',
-    description: 'I made a mobile game. Touch and drag to play. Hit them from the top.',
+    description: 'I made a mobile game. Touch and drag to play. Hit them from the top. See how many you can hit without touching the ground.',
   },
   {
     title: 'Pico-8 Carts',
