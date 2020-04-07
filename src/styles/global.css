@@ -77,8 +77,13 @@ button svg {
   transition: all 0.1s linear;
 }
 
+button:hover svg,
+button:focus svg {
+  transform: rotate(45deg);
+}
+
 button[aria-expanded='true'] svg {
-  transform: rotate(180deg);
+  transform: rotate(90deg);
 }
 
 :focus {

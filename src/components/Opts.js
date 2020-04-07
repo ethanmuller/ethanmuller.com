@@ -33,10 +33,18 @@ const themes = {
     '--link-active': '#E20000',
     '--link-visited': '#510A0A',
   },
+  yinz: {
+    '--fg': 'black',
+    '--bg': '#FFB800',
+    '--link': 'blue',
+    '--link-active': 'red',
+    '--link-visited': 'black',
+  },
 }
 
 const btnStyles = {
   '-webkit-appearance': 'none',
+  'mix-blend-mode': 'exclusion',
   background: '#FFB800',
   color: 'black',
   border: 'none',
@@ -44,6 +52,7 @@ const btnStyles = {
 
 const menuStyles = {
   background: '#FFB800',
+  'mix-blend-mode': 'exclusion',
   color: 'black',
 }
 
