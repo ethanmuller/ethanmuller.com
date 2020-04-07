@@ -35,7 +35,7 @@ const themes = {
   },
   yinz: {
     '--fg': 'black',
-    '--bg': '#FFB800',
+    '--bg': '#FFCD4D',
     '--link': 'blue',
     '--link-active': 'red',
     '--link-visited': 'black',
@@ -44,7 +44,6 @@ const themes = {
 
 const btnStyles = {
   '-webkit-appearance': 'none',
-  'mix-blend-mode': 'exclusion',
   background: '#FFB800',
   color: 'black',
   border: 'none',
@@ -52,7 +51,6 @@ const btnStyles = {
 
 const menuStyles = {
   background: '#FFB800',
-  'mix-blend-mode': 'exclusion',
   color: 'black',
 }
 
