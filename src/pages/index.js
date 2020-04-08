@@ -17,10 +17,6 @@ const socialLinks = [
     title: 'instagram',
     href: 'https://instagram.com/emuuuuuuuu',
   },
-  {
-    title: 'bandcamp',
-    href: 'https://emuuu.bandcamp.com/releases',
-  },
 ]
 
 const IndexPage = () => (
