@@ -25,7 +25,7 @@ const IndexPage = () => (
 
     <main className="o-layout">
       
-      <h1 className="hi im ethan muller">Hi I'm Ethan Muller</h1>
+      <h1 className="hi">Hi I'm Ethan Muller</h1>
       <header className="a">
         <Squeeze>
           <p>Welcome to my web page.</p>
