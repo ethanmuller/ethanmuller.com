@@ -24,14 +24,14 @@ const themes = {
     '--bg': '#001AFF',
     '--link': '#FFE03E',
     '--link-active': '#ffffff',
-    '--link-visited': '#3548F5',
+    '--link-visited': '#A46DC6',
   },
   virtual: {
     '--fg': '#E20000',
     '--bg': '#1F0202',
     '--link': '#AD1818',
     '--link-active': '#E20000',
-    '--link-visited': '#510A0A',
+    '--link-visited': '#AD1818',
   },
   yinz: {
     '--fg': 'black',

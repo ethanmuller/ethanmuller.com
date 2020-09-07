@@ -175,14 +175,26 @@ h2 {
   position: sticky;
   top: -1px;
   background: var(--bg);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hi {
   grid-area: hi;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bye {
   grid-area: bye;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .a {

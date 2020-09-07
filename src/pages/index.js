@@ -31,7 +31,7 @@ const IndexPage = () => (
           <p>Welcome to my web page.</p>
           <p>I’m a designer/developer.</p>
           <p>I’m interested in the space between design and development.</p>
-          <p>I want to build fun and/or meaningful products.</p>
+          <p>I want to build meaningful and/or fun tools and software.</p>
           <div style={{'margin-top': '3em'}}>
             <Opts />
           </div>
