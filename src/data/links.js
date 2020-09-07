@@ -11,7 +11,7 @@ export default [
   },
   {
     title: 'Wooltergeist',
-    href: 'https://www.lexaloffle.com/bbs/?uid=12911',
+    href: 'https://emuuuu.itch.io/wooltergeist',
     description: `A web game in which you are a demon! Possess and unpossess to progress!
 A Pico-8 game, made in 48 hours.`,
   },
