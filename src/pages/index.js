@@ -10,6 +10,10 @@ import Opts from "../components/Opts"
 
 const socialLinks = [
   {
+    title: 'emu.media',
+    href: 'https://emu.media',
+  },
+  {
     title: 'twitter',
     href: 'https://twitter.com/ethanmuller',
   },
@@ -41,7 +45,6 @@ const IndexPage = () => (
       <h2 className="b">Hyper<wbr />links</h2>
       <div className="c">
         <Squeeze>
-          <Hyperlinks />
           <ul>
             {
             socialLinks.map(i => (
