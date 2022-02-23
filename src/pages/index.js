@@ -19,7 +19,7 @@ const socialLinks = [
   },
   {
     title: 'instagram',
-    href: 'https://instagram.com/emuuuuuuuu',
+    href: 'https://instagram.com/emu.media',
   },
 ]
 
