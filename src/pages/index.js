@@ -10,14 +10,6 @@ import Opts from "../components/Opts"
 
 const socialLinks = [
   {
-    title: 'emu.media',
-    href: 'https://emu.media',
-  },
-  {
-    title: 'twitter',
-    href: 'https://twitter.com/ethanmuller',
-  },
-  {
     title: 'instagram',
     href: 'https://instagram.com/emuuuuuuuuuuuuuuuuuuuuu',
   },
