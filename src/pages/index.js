@@ -25,11 +25,11 @@ const IndexPage = () => (
       <header className="a">
         <Squeeze>
           <p>Welcome to my web page.</p>
-          <p>I’m a designer/developer.</p>
-          <p>I love to use computers to make and build stuff and things.</p>
+          <p>I love to use computers to make stuff. I like creating audiovisual things as well as software.</p>
           <div style={{'margin-top': '3em'}}>
             <Opts />
           </div>
+          <p>- [ ] save color selection in localstorage</p>
         </Squeeze>
       </header>
       
