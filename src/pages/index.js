@@ -29,7 +29,6 @@ const IndexPage = () => (
           <div style={{'margin-top': '3em'}}>
             <Opts />
           </div>
-          <p>- [ ] save color selection in localstorage</p>
         </Squeeze>
       </header>
       
