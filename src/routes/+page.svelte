@@ -36,6 +36,7 @@
 </style>
 
 <svelte:head>
+    <title>Ethan Muller's Website</title>
     <meta property="og:title" content="Ethan Muller's Website">
     <meta property="og:description" content="Hi, I'm Ethan Muller">
     <meta name="description" content="Hi, I'm Ethan Muller">
