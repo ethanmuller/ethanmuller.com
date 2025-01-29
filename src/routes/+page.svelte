@@ -1,6 +1,6 @@
 <style>
   h1, footer {
-    font-size: 2rem;
+    font-size: 1.3rem;
     margin: 0;
     font-weight: normal;
   }
@@ -36,14 +36,14 @@
 </style>
 
 <svelte:head>
-    <title>Ethan Muller's Website</title>
-    <meta property="og:title" content="Ethan Muller's Website">
-    <meta property="og:description" content="Hi, I'm Ethan Muller">
-    <meta name="description" content="Hi, I'm Ethan Muller">
+    <title>HI IM ETHAN MULLER</title>
+    <meta property="og:title" content="HI IM ETHAN MULLER">
+    <meta property="og:description" content="HI IM ETHAN MULLER">
+    <meta name="description" content="HI IM ETHAN MULLER">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Ethan Muller's Website">
-    <meta name="twitter:description" content="Hi, I'm Ethan Muller">
+    <meta name="twitter:title" content="HI IM ETHAN MULLER">
+    <meta name="twitter:description" content="HI IM ETHAN MULLER">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
