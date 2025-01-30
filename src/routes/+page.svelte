@@ -4,6 +4,13 @@
     margin: 0;
     font-weight: normal;
   }
+
+  @media (min-width: 36em) {
+  h1, footer {
+    font-size: 2rem;
+  }
+}
+
   h1 {
     margin-bottom: 1em;
   }
@@ -33,6 +40,12 @@
   .max {
     max-width: 33rem;
   }
+  .outer {
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+    padding: 2rem;
+  }
 </style>
 
 <svelte:head>
@@ -50,17 +63,19 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500&family=Major+Mono+Display&display=swap" rel="stylesheet">
 </svelte:head>
 
-<h1 class="major-mono">hi im ethan muller</h1>
-
-<div class="plex max">
-  <p>Welcome to my personal web page.</p>
-
-  <p>I love to use computers to make interactive multimedia.</p>
-
-  <p>I’m interested in computers, phones, free open source software, programming, video games, game dev, sound design, Linux, Mac, Windows, Android, iOS, etc.</p>
-
-  <p>I am currently: <strong class="positive">looking for employment</strong></p>
-
+<div class="outer">
+  <h1 class="major-mono">hi im ethan muller</h1>
+  
+  <div class="plex max">
+    <p>Welcome to my personal web page.</p>
+  
+    <p>I love to use computers to make interactive multimedia.</p>
+  
+    <p>I’m interested in computers, phones, free open source software, programming, video games, game dev, sound design, Linux, Mac, Windows, Android, iOS, etc.</p>
+  
+    <p>I am currently: <strong class="positive">looking for employment</strong></p>
+  
+  </div>
+  
+  <footer class="major-mono">bye im ethan muller</footer>
 </div>
-
-<footer class="major-mono">bye im ethan muller</footer>
