@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+   <head>
+       <title>How To Pico-8</title>
+
+       <!-- this prevents a dorky zoomed-out page on mobile -->
+       <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+       <!-- this tells the browser which characters we're using -->
+       <meta charset="UTF-8"> 
+   </head>
+
+<style>
+  body {
+    background: #1d2b53;
+    color: #fff1e8;
+
+    font-family: monospace;
+
+    padding: 3rem;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  header {
+    margin-bottom: 5rem;
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+
+    font-size: 1.2em;
+  }
+
+  key {
+    background: black;
+    padding: 0.125rem 0.25rem;
+    text-transform: uppercase;
+  }
+
+  a:link, a:visited {
+    color: cyan;
+  }
+
+  h2, h3 {
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin-top: 20vh;
+  }
+  
+  h3 {
+    margin-top: 10vh;
+  }
+  
+  main {
+    max-width: 48rem;
+  }
+
+  code {
+    background: black;
+    padding: 0.125rem 0.25rem;
+  }
+
+  .code-block {
+    background: black;
+    padding: 1.5em;
+  }
+  .code-block code {
+    padding: 0;
+  }
+  .code-block span {
+    color: rgba(255, 255, 255, 0.4);
+  }
+</style>
+
+<body><main>
+    <header><strong>Open Pico-8 in your browser here:<br /><a href="https://www.pico-8-edu.com/">pico-8-edu.com</a></strong></header>
+
+    <div style="min-height: 50vh; margin-bottom: 5rem;">
+      <div style="margin-bottom: 2rem;">After booting Pico-8, <strong>drag and drop one of these carts into the editor to load it:</strong></div>
+      <img src="./slow_and_curious.p8.png" />
+      <img src="./wooltergeist.p8.png" />
+      <img src="./sneak.p8.png" />
+      <img src="./hacker_cat.p8.png" />
+    </div>
+
+    <h2>Using Pico-8</h2>
+    <ul>
+      <li>Trapped in a black screen with text? Press <key>esc</key> on the keyboard to open up the editor</li>
+      <li>Type everything in lowercase, make sure <key>caps lock</key> is off</li>
+      <li>Press <key>ctrl + r</key> to run your program</li>
+    </ul>
+    <h2>Code Editor</h2>
+    <p>The scariest part of making games is arguably writing code. As you're learning to write code, <strong>take baby steps.</strong> If you're only making small changes, you'll never have big problems.</p>
+
+    <p>If you break down coding into smaller steps, here's what it looks like:</p>
+
+    <ul>
+      <li>Make a change to your code</li>
+      <li>Take a guess about what effect your change will have</li>
+      <li>Run your code with <key>ctrl + r</key></li>
+      <li>Look at what changed. Is it what you expected?</li>
+      <li>Repeat, over and over and over</li>
+    </ul>
+
+    <p>If you do this enough times, you can make a game. The hard part is knowing what changes to make in the first place. This comes with practice.</p>
+
+    <p>Pico-8 games are made up of 3 main functions:</p>
+
+    <div class="code-block"><pre><code>function _init()
+end
+
+function _update()
+end
+
+function _draw()
+end</code></pre></div>
+      <p>If you're copy and pasting code, <strong>make sure you only have one of each of these functions.</strong> If you define the <code>_draw()</code> function twice, only the second one will take effect, and you will confuse yourself.</p>
+
+      <h3>How To Count</h3>
+
+      <p>We make a variable <code>count</code> to hold a number. Then we update it by adding one to it and assigning to itself. And then we draw it by using <code>print(count)</code></p>
+
+    <div class="code-block"><pre><code>function _init()
+  count = 0
+end
+
+function _update()
+  count = count + 1
+end
+
+function _draw()
+  print(count)
+end</code></pre></div>
+      <p>See how the numbers seem to scroll up really fast? We can make the number "stay in place" by clearing the screen every frame with <code>cls()</code></p>
+    <div class="code-block"><pre><code>function _init()
+  count = 0
+end
+
+function _update()
+  count = count + 1
+end
+
+function _draw()
+  cls()
+  print(count)
+end</code></pre></div>
+
+  <h3>How To Draw</h3>
+
+  <p>Pico-8 has built-in pixel art tools, but you can also use code to draw basic shapes like circles, rectangles, and lines. Let's use the <code>circfill()</code> function to draw a filled-in circle.</p>
+
+  <div class="code-block"><pre><code>function _draw()
+  cls()
+  circfill(64, 64, 10, 8)
+end</code></pre></div>
+    <p>The first two arguments set the position. The third argument sets the radius. The fourth argument sets the color. Try tweaking these to see how the circle responds.</p>
+
+  <h3>How To Draw And Count At The Same Time</h3>
+  <p>Did you try tweaking the numbers previous example? Once you get a feel for what each number does, you'll be ready for this next example: changing the circle's values <em>with code</em> instead of by hand.</p>
+
+  <p>If we take the counting example from before, we can plug our <code>count</code> variable into the <code>circfill</code> function and get movement.</p>
+
+  <div class="code-block"><pre><code>function _init()
+  count = 0
+end
+
+function _update()
+  count = count + 1
+end
+
+function _draw()
+  cls()
+  print(count)
+  circfill(count, 64, 10, 8)
+end</code></pre></div>
+  <p>Look at that circle go. Wonder where he's going?</p>
+
+    <h2>Sprite Editor</h2>
+    <p>This is where you draw the art for your game. This is arguably the funnest panel. Sprites are usually drawn as 8x8 graphics.</p>
+    <ul>
+      <li>Right click to grab color from canvas</li>
+      <li>Scroll mouse wheel to zoom in and out</li>
+      <li><key>ctrl</key> + click to replace colors (this is like the fill tool, but colors don't have to be touching)</li>
+    </ul>
+
+    <h2>Map Editor</h2>
+    <p>This is where you put down objects in a grid to create a game world.</p>
+    <ul>
+      <li>Press <key>tab</key> to show full screen</li>
+      <li>Hold <key>space</key> then click and drag to pan</li>
+      <li>Not every game needs a map</li>
+    </ul>
+    <h2>SFX/Pattern Editor:</h2>
+    <p>This is where you can input notes to make little bits of music and sound effects.</p>
+    <ul>
+      <li>Sound effects and music patterns are the same thing. Sound effects are just music patterns played really fast</li>
+      <li><em>SPD</em> (speed) might work differently than you expect: low numbers are faster, higher numbers are slower. Click the number to increase, right click to decrease</li>
+      <li>Press <key>TAB</key> to change view between <strong>Sound Effect View</strong> and <strong>Music Tracker View</strong></li>
+      <li>Press <key>space</key> to play</li>
+      <li><strong>Sound Effect View:</strong>
+        <ul>
+          <li>Click and drag to draw out a sound effect</li>
+          <li>Higher is higher pitched, lower is lower pitched</li>
+          <li>Strip at the bottom sets volume. Delete notes by setting volume to 0</li>
+        </ul>
+      </li>
+    </ul>
+    <p>In <strong>Music Tracker View</strong> here's how your computer keyboard maps to a piano keyboard:</p>
+    <img src="pico-8-music-keyboard.png" />
+
+    <h2>Music Editor</h2>
+    <p>This is where you string together patterns into musical arrangements. You can play 4 different voices at a time, so think about how to break apart your musical ideas.</p>
+  <h2>If you need help</h2>
+  If your code isn't doing what you expect, you can send me an email to ask for help at <a href="mailto:ethanbmuller@gmail.com?subject=Pico-8 Help">ethanbmuller@gmail.com</a>. Please copy and paste the code you're having problems with.
+
+  </main></body>
+</html>
+
+
