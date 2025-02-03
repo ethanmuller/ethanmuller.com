@@ -22,6 +22,7 @@
   }
   .pika {
     font-size: 0.7rem;
+    margin-top: 3rem;
   }
   .pika img {
     display: block;
@@ -65,6 +66,9 @@
     flex-direction: column; 
     padding: 2rem;
   }
+  .nopad {
+    padding: 0;
+  }
 </style>
 
 <svelte:head>
@@ -82,13 +86,33 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500&family=Major+Mono+Display&display=swap" rel="stylesheet">
 </svelte:head>
 
+<script lang="ts">
+  import { onMount } from 'svelte'
+  let gifEl: HTMLImageElement;
+
+  const srcs = [
+  '3dcat.gif',
+  'cpu.gif',
+  'frog_crawls_east.gif',
+  'ham.gif',
+  'horse-riding.gif',
+  'kirby.gif',
+  'prince.gif',
+  'tinybunny.gif',
+  ];
+
+  onMount(() => {
+    gifEl.src = `/gif/${srcs[Math.floor(Math.random() * srcs.length)]}`;
+  })
+</script>
+
 <div class="outer">
   <h1 class="major-mono">hi im ethan muller</h1>
   
   <div class="plex max">
-    <p>Welcome to my personal web page <img src="/gif/cpu.gif" alt="" /></p>
+    <p>Welcome to my personal web page.</p>
   
-    <p>I make fun interactive multimedia <img style="vertical-align: middle;" src="/gif/ham.gif" alt="" /></p>
+    <p>I make fun interactive multimedia <img bind:this={gifEl} style="vertical-align: middle;" src="" alt="" /></p>
   
     <p>I’m into computers, phones, video games, electronics, programming, free open source software, game dev, sound design, Linux, Mac, Windows, Android, iOS, etc.</p>
   
