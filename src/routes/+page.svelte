@@ -26,6 +26,19 @@
   .pika img {
     display: block;
   }
+  @keyframes vertical-shaking {
+    0% { transform: translateY(0) }
+    25% { transform: translateY(1px) }
+    50% { transform: translateY(0) }
+    75% { transform: translateY(-1px) }
+    100% { transform: translateY(0) }
+  }
+  .shake {
+    display: inline-block;
+    transform: translate3d(0, 0, 0);
+    position: relative;
+    animation: vertical-shaking 150ms infinite;
+  }
   .major-mono {
     font-family: "Major Mono Display", serif;
     font-weight: 400;
@@ -86,7 +99,7 @@
   <footer class="major-mono">
     <div class="pika">
       <img src="/gif/pika.gif" alt="pikachu doing construction" />
-      Last update: 2025-02-03
+      Last upd<span class="shake">a</span>te: 2025-02-03
     </div>
     <p>bye im ethan muller</p>
   </footer>
