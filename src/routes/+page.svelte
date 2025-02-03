@@ -88,7 +88,7 @@
   <div class="plex max">
     <p>Welcome to my personal web page <img src="/gif/cpu.gif" alt="" /></p>
   
-    <p>I make fun interactive multimedia <img src="/gif/ham.gif" alt="" /></p>
+    <p>I make fun interactive multimedia <img style="vertical-align: middle;" src="/gif/ham.gif" alt="" /></p>
   
     <p>I’m into computers, phones, video games, electronics, programming, free open source software, game dev, sound design, Linux, Mac, Windows, Android, iOS, etc.</p>
   
