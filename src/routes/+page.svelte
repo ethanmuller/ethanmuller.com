@@ -20,6 +20,12 @@
   footer {
     margin-top: auto;
   }
+  .pika {
+    font-size: 0.7rem;
+  }
+  .pika img {
+    display: block;
+  }
   .major-mono {
     font-family: "Major Mono Display", serif;
     font-weight: 400;
@@ -73,9 +79,15 @@
   
     <p>I’m interested in computers, phones, free open source software, programming, video games, game dev, sound design, Linux, Mac, Windows, Android, iOS, etc.</p>
   
-    <p>I am currently: <strong class="positive">looking for employment</strong></p>
+    <p>I am currently: <strong class="positive">looking for work</strong></p>
   
   </div>
   
-  <footer class="major-mono">bye im ethan muller</footer>
+  <footer class="major-mono">
+    <div class="pika">
+      <img src="/gif/pika.gif" alt="pikachu doing construction" />
+      Last update: 2025-02-03
+    </div>
+    <p>bye im ethan muller</p>
+  </footer>
 </div>
