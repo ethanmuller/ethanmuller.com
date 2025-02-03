@@ -57,7 +57,7 @@
     color: green;
   }
   .max {
-    max-width: 35rem;
+    max-width: 38rem;
   }
   .outer {
     height: 100%;
@@ -88,9 +88,9 @@
   <div class="plex max">
     <p>Welcome to my personal web page.</p>
   
-    <p>I love to use computers to make interactive multimedia.</p>
+    <p>I use computers to make fun interactive multimedia.</p>
   
-    <p>I’m interested in computers, phones, free open source software, programming, electronics,  video games, game dev, sound design, Linux, Mac, Windows, Android, iOS, etc.</p>
+    <p>I’m interested in computers, phones, video games, electronics, programming, free open source software, game dev, sound design, Linux, Mac, Windows, Android, iOS, etc.</p>
   
     <p>I am currently: <strong class="positive">looking for work</strong></p>
   
