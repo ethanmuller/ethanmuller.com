@@ -86,11 +86,11 @@
   <h1 class="major-mono">hi im ethan muller</h1>
   
   <div class="plex max">
-    <p>Welcome to my personal web page.</p>
+    <p>Welcome to my personal web page <img src="/gif/cpu.gif" alt="" /></p>
   
-    <p>I use computers to make fun interactive multimedia.</p>
+    <p>I make fun interactive multimedia <img src="/gif/ham.gif" alt="" /></p>
   
-    <p>I’m interested in computers, phones, video games, electronics, programming, free open source software, game dev, sound design, Linux, Mac, Windows, Android, iOS, etc.</p>
+    <p>I’m into computers, phones, video games, electronics, programming, free open source software, game dev, sound design, Linux, Mac, Windows, Android, iOS, etc.</p>
   
     <p>I am currently: <strong class="positive">looking for work</strong></p>
   
