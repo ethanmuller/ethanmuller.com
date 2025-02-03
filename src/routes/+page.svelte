@@ -28,9 +28,9 @@
   }
   @keyframes vertical-shaking {
     0% { transform: translateY(0) }
-    25% { transform: translateY(1px) }
+    25% { transform: translateY(2px) }
     50% { transform: translateY(0) }
-    75% { transform: translateY(-1px) }
+    75% { transform: translateY(-2px) }
     100% { transform: translateY(0) }
   }
   .shake {
@@ -57,7 +57,7 @@
     color: green;
   }
   .max {
-    max-width: 33rem;
+    max-width: 35rem;
   }
   .outer {
     height: 100%;
@@ -90,7 +90,7 @@
   
     <p>I love to use computers to make interactive multimedia.</p>
   
-    <p>I’m interested in computers, phones, free open source software, programming, video games, game dev, sound design, Linux, Mac, Windows, Android, iOS, etc.</p>
+    <p>I’m interested in computers, phones, free open source software, programming, electronics,  video games, game dev, sound design, Linux, Mac, Windows, Android, iOS, etc.</p>
   
     <p>I am currently: <strong class="positive">looking for work</strong></p>
   
