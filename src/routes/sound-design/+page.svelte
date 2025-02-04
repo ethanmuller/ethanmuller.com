@@ -1,26 +1,42 @@
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
   article {
     display: grid;
-    grid-template-columns: 1fr 21rem;
+    grid-template-columns: 1fr;
   }
-  img {
+  img, video {
     width: 100%;
     height: 100%;
-    max-height: 45vh;
     object-fit: cover;
-    object-position: middle right;
+    max-height: 95vh;
+  }
+
+  .inset {
+    grid-template-columns: 1fr;
+    position: relative;
+    /*min-height: 60vh;*/
+    background: white;
+  }
+  .inset p {
+    background: white;
+    align-self: end;
+    margin-left: auto;
   }
   .plex {
-    font-family: "IBM Plex Mono", mono;
+    font-family: mono;
     font-weight: 300;
     font-style: normal;
   }
   p {
+    max-width: 21rem;
     padding: 2rem;
-    margin: 0;
+    margin: 0 0 0 auto;
   }
   article {
-    background: #f3f3f3;
+    background: #f6f6f6;
   }
   article:nth-child(2n) {
     background: #f9f9f9;
@@ -28,6 +44,24 @@
   .layout {
     display: flex;
     flex-direction: column;
+  }
+  @media (min-width: 50em) {
+    p {
+      max-width: 25rem;
+      padding: 2rem 4rem 4rem 2rem;
+    }
+    .inset p {
+      padding: 2rem;
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+    }
+    .inset.tl p {
+      bottom: auto;
+      right: auto;
+      top: 3rem;
+      left: 3rem;
+    }
   }
   @media (min-width: 11300px) {
     .layout {
@@ -56,45 +90,67 @@
   }
 </style>
 
+
+<script lang="ts">
+  import { onMount } from "svelte";
+
+const itemsList = [
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/octocat-loop.mp4",
+text: "Subtle synthesized elements with some foley to match physics. Usually I mix in mono but this has a cheeky hard pan left for his wave. No octocats were harmed in the making of this audio.",
+class: "inset"
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/LFE-update-machine-v6.mp4",
+text: "Wood, metal, magnets. Click clack. Cute tumbly music reminiscent of <a href=\"https://www.youtube.com/watch?v=e33KWTJPvuU\">Un P’tit Air</a>.",
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/lfe-family-unlock-v3.mp4",
+text: "Shout out to ratchets. Gotta be one of my favorite sound design elements.",
+class: "inset",
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20spinball%20loop.mp4",
+text: "Q: What if a ball rolled a loop de loop on metal and got uploaded into a computer sequence and then it shoomped through a pneumatic tube to project a hologram? What if that happened? What would that sound like?<br><br>A: Tube music",
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/honk%20ball%20loop.mp4",
+text: "Quite a productive day at the factory! One of my first and favorite pieces with <a href=\"https://www.makata.tv/\">Makata</a> & Benji. For this piece I sampled actual audio footage of machinery from the factory where they made the Honk bubbles.",
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/honk%20discover%20tab%20loop.mp4",
+text: "Lots of action in what feels like a little diorama.",
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20components%20loop.mp4",
+text: "Warm guitar, wind chimes, light clinking and clunking. Physical, tactile sounds. Set in outer space, but sonically it’s a prairie in the summer.",
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/HONK_PAINTINGLOGO_WITH_AUDIO_v05.mp4",
+text: "Back at the factory, a ball is formed from organic goop. It is rounded, plucked, and painted. Then it is ready.",
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/honk%20fanfare%20loop.mp4",
+text: "It's like that one episode of Spongebob where...",
+class: 'inset',
+},
+]
+
+  let videoElements: HTMLVideoElement[] = [];
+
+  onMount(() => {
+    videoElements.forEach((vid) => {
+      vid?.parentElement?.addEventListener("mouseover", () => vid.play());
+      vid?.parentElement?.addEventListener("mouseleave", () => vid.pause());
+    });
+  });
+</script>
+
 <div class="plex max layout">
-
-  <article>
-    <img src="https://ethanmuller.com/files/thmb/thmb_4.jpg" alt="" />
-    <p>Back in the factory, a ball is formed from organic goop. It is rounded, plucked, and painted. Then it is ready.</p>
-  </article>
-
-  <article>
-    <img src="https://ethanmuller.com/files/thmb/thmb_gh.jpg" alt="" />
-    <p>Subtle synthesized elements with some foley to match physics. Usually I mix in mono but this has a cheeky hard pan left for his wave. No octocats were harmed in the making of this audio.</p>
-  </article>
-
-  <article>
-    <img src="https://ethanmuller.com/files/thmb/thmb_2.jpg" alt="" />
-    <p>Warm guitar, wind chimes, light clinking and clunking. Physical, tactile sounds. Set in outer space, but sonically it’s a prairie in the summer.</p>
-  </article>
-
-  <article>
-    <img src="https://ethanmuller.com/files/thmb/thmb_1.jpg" alt="" />
-    <p class="plex">One of my first and favorite pieces with Makata & Benji. For this piece I sampled actual audio footage of machinery from the factory where they made the Honk bubbles.</p>
-  </article>
-
-  <article>
-    <img src="https://ethanmuller.com/files/thmb/thmb_3.jpg" alt="" />
-    <p>In this piece I dared to ask: what if a ball rolled looped de loop on metal and got uploaded into a computer sequence and then it shoomped through a pneumatic tube to make a hologram? What if that happened? What would that sound like?</p>
-  </article>
-
-  <article>
-    <img src="https://ethanmuller.com/files/thmb/thmb_5.jpg" alt="" />
-    <p>Wood, metal, magnets. Click clack. Cute tumbly music reminiscent of <a href="https://www.youtube.com/watch?v=e33KWTJPvuU">Un P’tit Air</a>.</p>
-  </article>
-
-  <article>
-    <img src="https://ethanmuller.com/files/thmb/thmb_fanfare.jpg" alt="" />
-    <p>Doing my darndest to recreate the Spongebob Band Geeks fanfare with software instruments. Sounds real, doesn’t it? Benji originally described this as a “Superbowl commercial” and I wasn’t sure if he was being serious.</p>
-  </article>
-
-  <article>
-    <img src="https://ethanmuller.com/files/thmb/thmb_6.jpg" alt="" />
-    <p>Lots of action in what feels like a little diorama. My favorite part is when the broom swoops in.</p>
-  </article>
+  {#each itemsList as item (item.src)}
+    <article class={item.class}>
+      <video bind:this={videoElements[itemsList.indexOf(item)]} src={item.src} loop></video>
+      <p>{@html item.text}</p>
+    </article>
+  {/each}
 </div>
