@@ -119,20 +119,20 @@ text: "Quite a productive day at the factory! One of my first and favorite piece
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20discover%20tab%20loop.mp4",
-text: "Lots of action in what feels like a little diorama.",
+text: "Lots of action in what feels like a teeny diorama. So many little details.",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20components%20loop.mp4",
 text: "Warm guitar, wind chimes, light clinking and clunking. Physical, tactile sounds. Set in outer space, but sonically it’s a prairie in the summer.",
 },
 {
-src: "https://ethanmuller.com/files/vid/sounds-good/HONK_PAINTINGLOGO_WITH_AUDIO_v05.mp4",
-text: "Back at the factory, a ball is formed from organic goop. It is rounded, plucked, and painted. Then it is ready.",
-},
-{
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20fanfare%20loop.mp4",
 text: "It's like that one episode of Spongebob where...",
 class: 'inset',
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/HONK_PAINTINGLOGO_WITH_AUDIO_v05.mp4",
+text: "Back at the factory, a ball is formed from organic goop. It is rounded, plucked, and painted. Then it is ready.",
 },
 ]
 
