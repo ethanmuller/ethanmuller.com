@@ -1,3 +1,6 @@
+<svelte:head>
+<title>Sound Design @ ethanmuller.com</title>
+</svelte:head>
 <style>
   * {
     box-sizing: border-box;
@@ -6,6 +9,11 @@
   article {
     display: grid;
     grid-template-columns: 1fr;
+    opacity: 0.9;
+    transition: opacity 0.7s ease-out;
+  }
+  article:hover {
+    opacity: 1;
   }
   video {
     width: 100%;
@@ -26,7 +34,7 @@
     margin-left: auto;
   }
   .plex {
-    font-family: mono;
+    font-family: monospace;
     font-weight: 300;
     font-style: normal;
   }
@@ -63,26 +71,12 @@
       left: 3rem;
     }
   }
-  @media (min-width: 11300px) {
-    .layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
+  @media (min-width: 900px) {
     article {
-      font-size: 0.8rem;
-      grid-template-columns: 1fr 16rem;
+      grid-template-columns: 1fr 20em;
     }
-    p {
-      padding: 2rem 3rem 2rem 1rem;
-      margin: 0;
-    }
-    article:nth-child(2n - 1),
-    article:nth-child(2n) {
-      background: #f3f3f3;
-    }
-    article:nth-child(4n - 1),
-    article:nth-child(4n) {
-      background: #f9f9f9;
+    video {
+      max-height: none;
     }
   }
   .max {
@@ -101,7 +95,7 @@ text: "Warm guitar, wind chimes, light clinking and clunking. Physical, tactile 
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20ball%20loop.mp4",
-text: "Quite a day at the factory! One of my first and favorite pieces with <a href=\"https://www.makata.tv/\">Makata</a> & Benji. For this piece I sampled actual audio footage of machinery from the (now defunct) factory where they made the Honk bubbles.",
+text: "Quite the day at the factory! One of my first and favorite pieces with <a href=\"https://www.makata.tv/\">Makata</a> & Benji. For this piece I sampled actual audio footage of machinery from the (now defunct) factory where they made the Honk bubbles.",
 },
 {
   src: "https://ethanmuller.com/files/vid/sounds-good/lfe-family-unlock-v3.mp4",
