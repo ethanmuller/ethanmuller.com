@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: 1fr;
   }
-  img, video {
+  video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -96,34 +96,34 @@
 
 const itemsList = [
 {
+src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20components%20loop.mp4",
+text: "Warm guitar, wind chimes, light clinking and clunking. Physical, tactile sounds. Set in outer space, but sonically it’s a prairie in the summer.",
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/honk%20ball%20loop.mp4",
+text: "Quite a day at the factory! One of my first and favorite pieces with <a href=\"https://www.makata.tv/\">Makata</a> & Benji. For this piece I sampled actual audio footage of machinery from the (now defunct) factory where they made the Honk bubbles.",
+},
+{
+  src: "https://ethanmuller.com/files/vid/sounds-good/lfe-family-unlock-v3.mp4",
+  text: "Shout out to ratchets. Gotta be one of my favorite sound design elements.",
+  class: "inset",
+},
+{
 src: "https://ethanmuller.com/files/vid/sounds-good/octocat-loop.mp4",
 text: "Subtle synthesized elements with some foley to match physics. Usually I mix in mono but this has a cheeky hard pan left for his wave. No octocats were harmed in the making of this audio.",
 class: "inset"
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/honk%20discover%20tab%20loop.mp4",
+text: "Lots of action in what feels like a teeny diorama. I love syncing audio to dense detailed visuals like this.",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/LFE-update-machine-v6.mp4",
 text: "Wood, metal, magnets. Click clack. Cute tumbly music reminiscent of <a href=\"https://www.youtube.com/watch?v=e33KWTJPvuU\">Un P’tit Air</a>.",
 },
 {
-src: "https://ethanmuller.com/files/vid/sounds-good/lfe-family-unlock-v3.mp4",
-text: "Shout out to ratchets. Gotta be one of my favorite sound design elements.",
-class: "inset",
-},
-{
 src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20spinball%20loop.mp4",
 text: "Q: What if a ball rolled a loop de loop on metal and got uploaded into a computer sequence and then it shoomped through a pneumatic tube to project a hologram? What if that happened? What would that sound like?<br><br>A: Tube music",
-},
-{
-src: "https://ethanmuller.com/files/vid/sounds-good/honk%20ball%20loop.mp4",
-text: "Quite a productive day at the factory! One of my first and favorite pieces with <a href=\"https://www.makata.tv/\">Makata</a> & Benji. For this piece I sampled actual audio footage of machinery from the factory where they made the Honk bubbles.",
-},
-{
-src: "https://ethanmuller.com/files/vid/sounds-good/honk%20discover%20tab%20loop.mp4",
-text: "Lots of action in what feels like a teeny diorama. So many little details.",
-},
-{
-src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20components%20loop.mp4",
-text: "Warm guitar, wind chimes, light clinking and clunking. Physical, tactile sounds. Set in outer space, but sonically it’s a prairie in the summer.",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20fanfare%20loop.mp4",
