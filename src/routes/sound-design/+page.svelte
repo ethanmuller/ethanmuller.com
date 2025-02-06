@@ -102,6 +102,12 @@ src: "https://ethanmuller.com/files/vid/sounds-good/honk%20ball%20loop.mp4",
 text: "Quite the day at the factory! One of my first and favorite pieces with <a href=\"https://www.makata.tv/\">Makata</a> & Benji. I sampled actual audio footage of machinery from the (now defunct) factory where they made the Honk bubbles.",
 },
 {
+src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/family-christmas-cookies.mp4",
+},
+{
   src: "https://ethanmuller.com/files/vid/sounds-good/lfe-family-unlock-v3.mp4",
   text: "Shout out to ratchets. Gotta be one of my favorite sound design elements.",
   class: "inset",
@@ -121,13 +127,18 @@ text: "Q: What if a ball rolled a loop de loop on metal and got uploaded into a 
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20fanfare%20loop.mp4",
-text: "It's like that one episode of Spongebob where...",
+text: "It's like that one episode of SpongeBob where...",
 class: 'inset',
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/HONK_PAINTINGLOGO_WITH_AUDIO_v05.mp4",
 text: "Back at the factory, a ball is formed from organic goop. It is rounded, plucked, and painted. Then it is ready.",
 },
+{
+src: "https://ethanmuller.com/files/vid/etc/rad.mp4",
+text: "Alternate sound design for one of my favorite PS2 games: <a href='https://en.wikipedia.org/wiki/Robot_Alchemic_Drive'>Robot Alchemic Drive (R.A.D.).</a> Trying to match that nice warm blown-out sound of 80s anime.",
+},
+
 ]
 
   let videoElements: HTMLVideoElement[] = [];
@@ -175,8 +186,10 @@ text: "Back at the factory, a ball is formed from organic goop. It is rounded, p
 <div class="plex max layout">
   {#each itemsList as item (item.src)}
     <article class={item.class}>
-      <video preload="auto" playsinline bind:this={videoElements[itemsList.indexOf(item)]} src={`${item.src}#t=0.1`} loop></video>
-      <p>{@html item.text}</p>
+      <video style={ !item.text ? 'grid-column: span 2' : '' } preload="auto" playsinline bind:this={videoElements[itemsList.indexOf(item)]} src={`${item.src}#t=0.1`} loop></video>
+      {#if item.text}
+        <p>{@html item.text}</p>
+      {/if}
     </article>
   {/each}
 </div>
