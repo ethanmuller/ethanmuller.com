@@ -75,9 +75,6 @@
     article {
       grid-template-columns: 1fr 20em;
     }
-    video {
-      max-height: none;
-    }
   }
   .max {
     max-width: 87rem;
@@ -89,6 +86,11 @@
   import { onMount } from "svelte";
 
 const itemsList = [
+{
+  src: "https://ethanmuller.com/files/vid/sounds-good/lfe-family-unlock-v3.mp4",
+  text: "Shout out to ratchets. Gotta be one of my favorite sound design elements.",
+  class: "inset",
+},
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20components%20loop.mp4",
 text: "Warm guitar, wind chimes, light clinking and clunking. Physical, tactile sounds. Set in outer space, but sonically it’s a prairie in the summer.",
@@ -106,16 +108,16 @@ src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/family-christmas-cookies.mp4",
-},
-{
-  src: "https://ethanmuller.com/files/vid/sounds-good/lfe-family-unlock-v3.mp4",
-  text: "Shout out to ratchets. Gotta be one of my favorite sound design elements.",
-  class: "inset",
+hidden: true,
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/octocat-loop.mp4",
 text: "Subtle synthesized elements with some foley to match physics. Usually I mix in mono but this has a cheeky hard pan left for his wave. No octocats were harmed in the making of this audio.",
 class: "inset"
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/friends.mp4",
+text: "It can be fun to dance with your friend while listening to loud music.",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20discover%20tab%20loop.mp4",
@@ -138,6 +140,19 @@ text: "Back at the factory, a ball is formed from organic goop. It is rounded, p
 src: "https://ethanmuller.com/files/vid/etc/rad.mp4",
 text: "Alternate sound design for one of my favorite PS2 games: <a href='https://en.wikipedia.org/wiki/Robot_Alchemic_Drive'>Robot Alchemic Drive (R.A.D.).</a> Trying to match that nice warm blown-out sound of 80s anime.",
 },
+{
+src: "https://ethanmuller.com/files/vid/etc/katamari.mp4",
+hidden: true,
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/metroid.mp4",
+text: "Alternate sound design for Metroid Prime",
+class: "inset",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/eatimng.mp4",
+},
+// My search for novel sound generation 
 
 ]
 
@@ -185,11 +200,13 @@ text: "Alternate sound design for one of my favorite PS2 games: <a href='https:/
 
 <div class="plex max layout">
   {#each itemsList as item (item.src)}
-    <article class={item.class}>
-      <video style={ !item.text ? 'grid-column: span 2' : '' } preload="auto" playsinline bind:this={videoElements[itemsList.indexOf(item)]} src={`${item.src}#t=0.1`} loop></video>
-      {#if item.text}
-        <p>{@html item.text}</p>
-      {/if}
-    </article>
+    {#if !item.hidden}
+      <article class={item.class}>
+        <video style={ !item.text ? 'grid-column: span 2' : '' } preload="auto" playsinline bind:this={videoElements[itemsList.indexOf(item)]} src={`${item.src}#t=0.1`} loop></video>
+        {#if item.text}
+          <p>{@html item.text}</p>
+        {/if}
+      </article>
+    {/if}
   {/each}
 </div>
