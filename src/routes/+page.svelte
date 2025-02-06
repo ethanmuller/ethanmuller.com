@@ -123,7 +123,7 @@
   <footer class="major-mono">
     <div class="pika">
       <img src="/gif/pika.gif" alt="pikachu doing construction" />
-      Last upd<span class="shake">a</span>te: 2025-02-03
+      Last upd<span class="shake">a</span>te: 2025-02-05
     </div>
     <p>bye im ethan muller</p>
   </footer>
