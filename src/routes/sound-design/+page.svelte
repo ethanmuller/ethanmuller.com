@@ -9,10 +9,10 @@
   article {
     display: grid;
     grid-template-columns: 1fr;
-    opacity: 0.9;
-    transition: opacity 0.7s ease-out;
+    opacity: 0.7;
+    transition: opacity 0.3s ease-out;
   }
-  article:hover {
+  article.hover {
     opacity: 1;
   }
   video {
@@ -29,7 +29,6 @@
     background: white;
   }
   .inset p {
-    background: white;
     align-self: end;
     margin-left: auto;
   }
@@ -63,6 +62,7 @@
       position: absolute;
       bottom: 2rem;
       right: 2rem;
+      background: white;
     }
     .inset.tl p {
       bottom: auto;
@@ -94,8 +94,12 @@ src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20components%20loop.mp4"
 text: "Warm guitar, wind chimes, light clinking and clunking. Physical, tactile sounds. Set in outer space, but sonically it’s a prairie in the summer.",
 },
 {
+src: "https://ethanmuller.com/files/vid/sounds-good/LFE-update-machine-v6.mp4",
+text: "Wood, metal, magnets. Click clack. Cute tumbly music reminiscent of <a href=\"https://www.youtube.com/watch?v=e33KWTJPvuU\">Un P’tit Air</a>.",
+},
+{
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20ball%20loop.mp4",
-text: "Quite the day at the factory! One of my first and favorite pieces with <a href=\"https://www.makata.tv/\">Makata</a> & Benji. For this piece I sampled actual audio footage of machinery from the (now defunct) factory where they made the Honk bubbles.",
+text: "Quite the day at the factory! One of my first and favorite pieces with <a href=\"https://www.makata.tv/\">Makata</a> & Benji. I sampled actual audio footage of machinery from the (now defunct) factory where they made the Honk bubbles.",
 },
 {
   src: "https://ethanmuller.com/files/vid/sounds-good/lfe-family-unlock-v3.mp4",
@@ -104,16 +108,12 @@ text: "Quite the day at the factory! One of my first and favorite pieces with <a
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/octocat-loop.mp4",
-text: "Subtle synthesized elements with some foley to match physics. Usually I mix in mono but this has a cheeky hard pan left for his wave. No octocats were harmed in the making of this audio.",
+text: "Subtle synthesized elements with some foley to match physics. Usually I mix in mono but this has a cheeky hard pan left for his wave. If you're on a phone in portrait mode, that's your top speaker. No octocats were harmed in the making of this audio.",
 class: "inset"
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20discover%20tab%20loop.mp4",
 text: "Lots of action in what feels like a teeny diorama. I love syncing audio to dense detailed visuals like this.",
-},
-{
-src: "https://ethanmuller.com/files/vid/sounds-good/LFE-update-machine-v6.mp4",
-text: "Wood, metal, magnets. Click clack. Cute tumbly music reminiscent of <a href=\"https://www.youtube.com/watch?v=e33KWTJPvuU\">Un P’tit Air</a>.",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20spinball%20loop.mp4",
@@ -131,11 +131,43 @@ text: "Back at the factory, a ball is formed from organic goop. It is rounded, p
 ]
 
   let videoElements: HTMLVideoElement[] = [];
+  let currentlyPlayingVideo: HTMLVideoElement;
+
+  function pauseAll() {
+    document.querySelectorAll('video').forEach((video) => {
+      video.pause()
+    })
+  }
+
+  function stopCurrentlyPlaying() {
+    currentlyPlayingVideo.pause()
+  }
+
+  function hover(el:HTMLElement) {
+    el.classList.add('hover')
+  }
+
+  function unhover(el:HTMLElement) {
+    el.classList.remove('hover')
+  }
 
   onMount(() => {
     videoElements.forEach((vid) => {
-      vid?.parentElement?.addEventListener("mouseover", () => vid.play());
-      vid?.parentElement?.addEventListener("mouseleave", () => vid.pause());
+      vid?.parentElement?.addEventListener("mouseover", () => {
+        vid?.parentElement?.classList.add('hover')
+        vid.play();
+        currentlyPlayingVideo = vid
+      });
+      vid?.parentElement?.addEventListener("mouseleave", () => {
+        vid.pause();
+        vid?.parentElement?.classList.remove('hover')
+      });
+      vid?.parentElement?.addEventListener("touchstart", () => {
+        stopCurrentlyPlaying()
+        vid?.parentElement?.classList.add('hover')
+        vid.play();
+        currentlyPlayingVideo = vid
+      });
     });
   });
 </script>
