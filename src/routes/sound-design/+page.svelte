@@ -108,7 +108,7 @@ text: "Quite the day at the factory! One of my first and favorite pieces with <a
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/octocat-loop.mp4",
-text: "Subtle synthesized elements with some foley to match physics. Usually I mix in mono but this has a cheeky hard pan left for his wave. If you're on a phone in portrait mode, that's your top speaker. No octocats were harmed in the making of this audio.",
+text: "Subtle synthesized elements with some foley to match physics. Usually I mix in mono but this has a cheeky hard pan left for his wave. No octocats were harmed in the making of this audio.",
 class: "inset"
 },
 {
