@@ -19,7 +19,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    max-height: 95vh;
+    /* max-height: 95vh; */
   }
 
   .inset {
@@ -47,6 +47,14 @@
   }
   article:nth-child(2n) {
     background: #f9f9f9;
+  }
+  article.smol {
+    background: white;
+  }
+  .smol video {
+    max-width: 500px;
+    max-height: 500px;
+    margin: 0 auto;
   }
   .layout {
     display: flex;
@@ -105,6 +113,7 @@ text: "Quite the day at the factory! One of my first and favorite pieces with <a
 },
 {
 src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
+class: "smol",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/family-christmas-cookies.mp4",
@@ -151,6 +160,7 @@ class: "inset",
 },
 {
 src: "https://ethanmuller.com/files/vid/etc/eatimng.mp4",
+class: "smol",
 },
 // My search for novel sound generation 
 

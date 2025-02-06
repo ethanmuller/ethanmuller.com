@@ -114,7 +114,7 @@
   
     <p>I make fun interactive multimedia <img bind:this={gifEl} style="vertical-align: middle;" src="" alt="" /></p>
   
-    <p>I’m into computers, phones, video games, electronics, programming, free open source software, game dev, sound design, Linux, Mac, Windows, Android, iOS, etc.</p>
+    <p>I’m into computers, phones, video games, electronics, programming, free open source software, game dev, <a href="/sound-design">sound design</a>, Linux, Mac, Windows, Android, iOS, etc.</p>
   
     <p>I am currently: <strong class="positive">looking for work</strong></p>
   
