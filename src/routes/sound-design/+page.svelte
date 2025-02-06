@@ -175,7 +175,7 @@ text: "Back at the factory, a ball is formed from organic goop. It is rounded, p
 <div class="plex max layout">
   {#each itemsList as item (item.src)}
     <article class={item.class}>
-      <video bind:this={videoElements[itemsList.indexOf(item)]} src={item.src} loop></video>
+      <video playsinline bind:this={videoElements[itemsList.indexOf(item)]} src={item.src} loop></video>
       <p>{@html item.text}</p>
     </article>
   {/each}
