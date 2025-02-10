@@ -11,6 +11,7 @@
     grid-template-columns: 1fr;
     opacity: 0.7;
     transition: opacity 0.3s ease-out;
+    position: relative;
   }
   article.hover {
     opacity: 1;
@@ -19,12 +20,14 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* max-height: 95vh; */
+    max-height: 95vh;
+  }
+  .no-max-height video {
+    max-height: none;
   }
 
   .inset {
     grid-template-columns: 1fr;
-    position: relative;
     /*min-height: 60vh;*/
     background: white;
   }
@@ -87,6 +90,38 @@
   .max {
     max-width: 87rem;
   }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .spinner {
+    width: 4rem;
+    height: 4rem;
+    top: 1rem;
+    left: 1rem;
+    position: absolute;
+    pointer-events: none;
+    animation: spin 1s linear infinite;
+    display: none;
+  }
+  .loaded .spinner {
+    display: block;
+  }
+  .spinner::after {
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    top: 0;
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    background: #fff;
+    border-radius: 1rem;
+  }
 </style>
 
 
@@ -95,17 +130,17 @@
 
 const itemsList = [
 {
-  src: "https://ethanmuller.com/files/vid/sounds-good/lfe-family-unlock-v3.mp4",
-  text: "Shout out to ratchets. Gotta be one of my favorite sound design elements.",
-  class: "inset",
-},
-{
 src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20components%20loop.mp4",
 text: "Warm guitar, wind chimes, light clinking and clunking. Physical, tactile sounds. Set in outer space, but sonically it’s a prairie in the summer.",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/LFE-update-machine-v6.mp4",
 text: "Wood, metal, magnets. Click clack. Cute tumbly music reminiscent of <a href=\"https://www.youtube.com/watch?v=e33KWTJPvuU\">Un P’tit Air</a>.",
+},
+{
+  src: "https://ethanmuller.com/files/vid/sounds-good/lfe-family-unlock-v3.mp4",
+  text: "Shout out to ratchets. Gotta be one of my favorite sound design elements.",
+  class: "inset",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20ball%20loop.mp4",
@@ -156,11 +191,12 @@ hidden: true,
 {
 src: "https://ethanmuller.com/files/vid/etc/metroid.mp4",
 text: "Alternate sound design for Metroid Prime",
-class: "inset",
+class: "inset no-max-height",
 },
 {
 src: "https://ethanmuller.com/files/vid/etc/eatimng.mp4",
 class: "smol",
+hidden: true,
 },
 // My search for novel sound generation 
 
@@ -216,6 +252,7 @@ class: "smol",
         {#if item.text}
           <p>{@html item.text}</p>
         {/if}
+        <div class="spinner"></div>
       </article>
     {/if}
   {/each}
