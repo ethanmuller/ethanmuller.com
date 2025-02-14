@@ -6,7 +6,8 @@
     .btn-group {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        align-items: end;
+        grid-template-rows: 25vh 25vh 25vh;
+        align-items: stretch;
         width: 100%;
         gap: 0.75rem;
         padding: 1rem 2rem 0;

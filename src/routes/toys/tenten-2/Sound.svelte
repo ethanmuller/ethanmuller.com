@@ -23,6 +23,7 @@ function handle_press(e: Event) {
 
   sound = ctx.createBufferSource();
   sound.buffer = audio;
+  sound.loop = holdToPlay;
   sound.connect(ctx.destination);
   sound.start(ctx.currentTime);
 }

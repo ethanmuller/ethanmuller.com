@@ -36,12 +36,12 @@
     <Sound src="https://ethanmuller.com/jule/tenten/wav/tenten-lock-1.wav">Lock <span class="icon">🔒</span></Sound>
     <Sound src="https://ethanmuller.com/jule/tenten/wav/tenten-mute-1.wav">Mute <span class="icon">🙉</span></Sound>
     <Sound src="https://ethanmuller.com/jule/tenten/wav/tenten-unmute-1.wav">Unmute <span class="icon">🐵</span></Sound>
-  <Sound src="https://ethanmuller.com/jule/tenten/wav/tenten-connection-success-1.wav">Connection Success <span class="icon">📢</span></Sound>
-  <Sound src="https://ethanmuller.com/jule/tenten/wav/tenten-hangup-1.wav">Hang Up <span class="icon">✌</span></Sound>
     <Sound holdToPlay={true} src="https://ethanmuller.com/jule/tenten/wav/tenten-connecting-loop-1.wav">Waiting Loop <small>hold</small><span class="icon">🤠</span></Sound>
+    <Sound src="https://ethanmuller.com/jule/tenten/wav/tenten-connection-success-1.wav">Connection Success <span class="icon">📢</span></Sound>
+    <Sound src="https://ethanmuller.com/jule/tenten/wav/tenten-hangup-1.wav">Hang Up <span class="icon">✌</span></Sound>
+    <Sound src="https://ethanmuller.com/jule/tenten/wav/tenten-cuica-1.wav">Could not reach <span class="icon">🙈</span></Sound>
     <Sound src="https://ethanmuller.com/jule/tenten/wav/tenten-push-start-1.wav">____ is talking... <span class="icon">📢</span></Sound>
     <Sound src="https://ethanmuller.com/jule/tenten/wav/tenten-push-end-1.wav">Over! <span class="icon">✌</span></Sound>
-    <Sound src="https://ethanmuller.com/jule/tenten/wav/tenten-cuica-1.wav">Could not reach <span class="icon">🙈</span></Sound>
 </div>
 <!-- <button>II 💚</button>
 <button>III 💚</button>
