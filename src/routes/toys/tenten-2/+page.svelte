@@ -25,7 +25,7 @@
     }
     @media (min-width: 32rem) {
       .icon {
-        font-size: calc(5vw);
+        font-size: calc(5vh);
       }
     }
 </style>
