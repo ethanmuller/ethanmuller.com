@@ -66,9 +66,6 @@
     flex-direction: column; 
     padding: 2rem;
   }
-  .nopad {
-    padding: 0;
-  }
 </style>
 
 <svelte:head>

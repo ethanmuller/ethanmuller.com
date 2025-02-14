@@ -248,7 +248,7 @@ hidden: true,
   {#each itemsList as item (item.src)}
     {#if !item.hidden}
       <article class={item.class}>
-        <video style={ !item.text ? 'grid-column: span 2' : '' } preload="auto" playsinline bind:this={videoElements[itemsList.indexOf(item)]} src={`${item.src}#t=0.1`} loop></video>
+        <video style={ !item.text ? 'grid-column: span 2' : '' } preload="auto" playsinline bind:this={videoElements[itemsList.indexOf(item)]} src={`${item.src}#t=0.1`} loop><track kind="captions"></video>
         {#if item.text}
           <p>{@html item.text}</p>
         {/if}
