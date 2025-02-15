@@ -13,7 +13,7 @@
     transition: opacity 0.3s ease-out;
     position: relative;
   }
-  article.hover {
+  article.tryna-play {
     opacity: 1;
   }
   video {
@@ -105,11 +105,14 @@
     left: 1rem;
     position: absolute;
     pointer-events: none;
-    animation: spin 1s linear infinite;
+    animation: spin 1.5s cubic-bezier(0.645, 0.045, 0.355, 1.000) infinite;
     display: none;
   }
-  .loaded .spinner {
+  .tryna-play .spinner {
     display: block;
+  }
+  .loaded .spinner {
+    display: none;
   }
   .spinner::after {
     position: absolute;
@@ -119,8 +122,9 @@
     content: '';
     width: 1rem;
     height: 1rem;
-    background: #fff;
+    background: #eee;
     border-radius: 1rem;
+    /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);*/
   }
 </style>
 
@@ -198,57 +202,73 @@ src: "https://ethanmuller.com/files/vid/etc/eatimng.mp4",
 class: "smol",
 hidden: true,
 },
-// My search for novel sound generation 
-
 ]
 
   let videoElements: HTMLVideoElement[] = [];
   let currentlyPlayingVideo: HTMLVideoElement;
+  let loadedStates = Array(itemsList.length).fill(false);
 
   function pauseAll() {
-    document.querySelectorAll('video').forEach((video) => {
-      video.pause()
-    })
+    document.querySelectorAll("video").forEach((video) => video.pause());
   }
 
   function stopCurrentlyPlaying() {
-    currentlyPlayingVideo.pause()
+    currentlyPlayingVideo?.pause();
   }
 
-  function hover(el:HTMLElement) {
-    el.classList.add('hover')
+  function hover(el: HTMLElement) {
+    el.classList.add("tryna-play");
   }
 
-  function unhover(el:HTMLElement) {
-    el.classList.remove('hover')
+  function unhover(el: HTMLElement) {
+    el.classList.remove("tryna-play");
+  }
+
+  function videoReady(index: number) {
+    loadedStates[index] = true;
   }
 
   onMount(() => {
-    videoElements.forEach((vid) => {
-      vid?.parentElement?.addEventListener("mouseover", () => {
-        vid?.parentElement?.classList.add('hover')
-        vid.play();
-        currentlyPlayingVideo = vid
+    videoElements.forEach((vid, index) => {
+      vid?.addEventListener("canplaythrough", () => {
+        videoReady(index);
       });
+
+      vid?.parentElement?.addEventListener("mouseover", () => {
+        vid?.parentElement?.classList.add("tryna-play");
+        vid.play();
+        currentlyPlayingVideo = vid;
+      });
+
       vid?.parentElement?.addEventListener("mouseleave", () => {
         vid.pause();
-        vid?.parentElement?.classList.remove('hover')
+        vid?.parentElement?.classList.remove("tryna-play");
       });
+
       vid?.parentElement?.addEventListener("touchstart", () => {
-        stopCurrentlyPlaying()
-        vid?.parentElement?.classList.add('hover')
+        stopCurrentlyPlaying();
+        vid?.parentElement?.classList.add("tryna-play");
         vid.play();
-        currentlyPlayingVideo = vid
+        currentlyPlayingVideo = vid;
       });
     });
   });
 </script>
 
 <div class="plex max layout">
-  {#each itemsList as item (item.src)}
+  {#each itemsList as item, index (item.src)}
     {#if !item.hidden}
-      <article class={item.class}>
-        <video style={ !item.text ? 'grid-column: span 2' : '' } preload="auto" playsinline bind:this={videoElements[itemsList.indexOf(item)]} src={`${item.src}#t=0.1`} loop><track kind="captions"></video>
+      <article class="{item.class} {loadedStates[index] ? 'loaded' : ''}">
+        <video
+          style={ !item.text ? 'grid-column: span 2' : '' }
+          preload="auto"
+          playsinline
+          bind:this={videoElements[index]}
+          src={`${item.src}#t=0.1`}
+          loop
+        >
+          <track kind="captions">
+        </video>
         {#if item.text}
           <p>{@html item.text}</p>
         {/if}
