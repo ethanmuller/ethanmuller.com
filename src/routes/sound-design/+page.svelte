@@ -130,6 +130,14 @@
 
 const itemsList = [
 {
+src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
+class: "smol",
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/honk%20ball%20loop.mp4",
+text: "Quite the day at the factory! One of my first and favorite pieces with <a href=\"https://www.makata.tv/\">Makata</a> & Benji. I sampled actual audio footage of machinery from the (now defunct) factory where they made the Honk bubbles.",
+},
+{
 src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20components%20loop.mp4",
 text: "Warm guitar, wind chimes, light clinking and clunking. Physical, tactile sounds. Set in outer space, but sonically it’s a prairie in the summer.",
 },
@@ -141,14 +149,6 @@ text: "Wood, metal, magnets. Click clack. Cute tumbly music reminiscent of <a hr
   src: "https://ethanmuller.com/files/vid/sounds-good/lfe-family-unlock-v3.mp4",
   text: "Shout out to ratchets. Gotta be one of my favorite sound design elements.",
   class: "inset",
-},
-{
-src: "https://ethanmuller.com/files/vid/sounds-good/honk%20ball%20loop.mp4",
-text: "Quite the day at the factory! One of my first and favorite pieces with <a href=\"https://www.makata.tv/\">Makata</a> & Benji. I sampled actual audio footage of machinery from the (now defunct) factory where they made the Honk bubbles.",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
-class: "smol",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/family-christmas-cookies.mp4",
