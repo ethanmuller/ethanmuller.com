@@ -258,7 +258,7 @@ hidden: true,
 <div class="plex max layout">
   {#each itemsList as item, index (item.src)}
     {#if !item.hidden}
-      <article class="{item.class} {loadedStates[index] ? 'loaded' : ''}">
+      <article class="{`${item.class} ${loadedStates[index] ? 'loaded' : 'not-loaded'}`}">
         <video
           style={ !item.text ? 'grid-column: span 2' : '' }
           preload="auto"
