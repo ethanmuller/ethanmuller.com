@@ -162,6 +162,9 @@
 
 <script lang="ts">
   import { onMount } from "svelte";
+  import { sound } from "svelte-sound";
+
+  let ui_sound_a;
 
   let autoplay = true;
 
@@ -314,6 +317,7 @@ hidden: true,
   }
 </script>
 
+
 <div class="plex max layout">
   {#each itemsList as item, index (item.src)}
     {#if !item.hidden}
@@ -325,6 +329,7 @@ hidden: true,
           bind:this={videoElements[index]}
           src={`${item.src}#t=0.1`}
           loop
+          disableRemotePlayback
         >
           <track kind="captions">
         </video>
@@ -336,11 +341,21 @@ hidden: true,
     {/if}
   {/each}
   <div class="floater">
-    <button class="stop-button" on:click={toggleAutoplay}>
-      {#if autoplay}
+    {#if autoplay}
+      <button class="stop-button" on:click={toggleAutoplay} use:sound={{
+        src: "https://ethanmuller.com/files/wav/sfx-monkey-c.wav",
+        events: ["click"]
+        }}>
         <span style="margin-right: 1em">Stop</span>
-      {/if}
-      <span class="stop-button__icon">{autoplay ? '🙉' : '🐵' } </span>
-    </button>
+        <span class="stop-button__icon">🙉</span>
+      </button>
+    {:else}
+      <button class="stop-button" on:click={toggleAutoplay} use:sound={{
+        src: "https://ethanmuller.com/files/wav/sfx-monkey-b.wav",
+        events: ["click"]
+        }}>
+        <span class="stop-button__icon">🐵</span>
+      </button>
+    {/if}
   </div>
 </div>
