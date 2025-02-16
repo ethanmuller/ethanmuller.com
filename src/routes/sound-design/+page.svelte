@@ -267,6 +267,16 @@ hidden: true,
         videoReady(index);
       });
 
+      vid?.addEventListener("click", () => {
+        // note this is only for a click on the video which disables autoplay
+        if (!autoplay) {
+          vid?.parentElement?.classList.add("tryna-play");
+          vid.play();
+          currentlyPlayingVideo = vid;
+        }
+        autoplay = true
+      })
+
       vid?.parentElement?.addEventListener("mouseover", () => {
         vid?.parentElement?.classList.add("tryna-play");
         if (autoplay) {
@@ -274,6 +284,7 @@ hidden: true,
         }
         currentlyPlayingVideo = vid;
       });
+
 
       vid?.parentElement?.addEventListener("mouseleave", () => {
         vid.pause();
