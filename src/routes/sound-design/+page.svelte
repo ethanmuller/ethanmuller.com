@@ -12,6 +12,7 @@
     opacity: 0.7;
     transition: opacity 0.3s ease-out;
     position: relative;
+    align-items: center;
   }
   article.tryna-play {
     opacity: 1;
@@ -20,10 +21,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    max-height: 95vh;
-  }
-  .no-max-height video {
-    max-height: none;
   }
 
   .inset {
@@ -184,8 +181,13 @@ src: "https://ethanmuller.com/files/vid/sounds-good/honk%20ball%20loop.mp4",
 text: "Quite the day at the factory! One of my first and favorite pieces with <a href=\"https://www.makata.tv/\">Makata</a> & Benji. I sampled actual audio footage of machinery from the (now defunct) factory where they made the Honk bubbles.",
 },
 {
+src: "https://ethanmuller.com/files/vid/sounds-good/family-nutcracker.mp4",
+text: "Carrots and chips are what I used to get this crunching sound.",
+},
+{
 src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20components%20loop.mp4",
 text: "Warm guitar, wind chimes, light clinking and clunking. Physical, tactile sounds. Set in outer space, but sonically it’s a prairie in the summer.",
+hidden: true,
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/LFE-update-machine-v6.mp4",
@@ -194,16 +196,10 @@ text: "Wood, metal, magnets. Click clack. Cute tumbly music reminiscent of <a hr
 {
   src: "https://ethanmuller.com/files/vid/sounds-good/lfe-family-unlock-v3.mp4",
   text: "Shout out to ratchets. Gotta be one of my favorite sound design elements.",
-  class: "inset",
-},
-{
-src: "https://ethanmuller.com/files/vid/sounds-good/family-christmas-cookies.mp4",
-hidden: true,
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/octocat-loop.mp4",
 text: "Subtle synthesized elements with some foley to match physics. Usually I mix in mono but this has a cheeky hard pan left for his wave. No octocats were harmed in the making of this audio.",
-class: "inset"
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20discover%20tab%20loop.mp4",
@@ -229,7 +225,7 @@ hidden: true,
 {
 src: "https://ethanmuller.com/files/vid/etc/metroid.mp4",
 text: "Alternate sound design for Metroid Prime",
-class: "inset no-max-height",
+class: "inset",
 },
 {
 src: "https://ethanmuller.com/files/vid/etc/friends.mp4",
