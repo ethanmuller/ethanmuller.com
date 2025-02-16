@@ -162,6 +162,15 @@
 
 <script lang="ts">
   import { onMount } from "svelte";
+  import { Howl, Howler } from 'howler'
+
+  const ui_sfx_a = new Howl({
+    src: ['https://ethanmuller.com/files/wav/sfx-monkey-c.wav'],
+  });
+
+  const ui_sfx_b = new Howl({
+    src: ['https://ethanmuller.com/files/wav/sfx-monkey-b.wav'],
+  });
 
   let autoplay = true;
 
@@ -308,8 +317,10 @@ hidden: true,
     if (autoplay) {
       currentlyPlayingVideo?.play()
       currentlyPlayingVideo?.parentElement?.classList.add("tryna-play");
+      ui_sfx_b.play()
     } else {
       currentlyPlayingVideo?.pause()
+      ui_sfx_a.play()
     }
   }
 </script>
