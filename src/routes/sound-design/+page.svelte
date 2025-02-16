@@ -46,7 +46,7 @@
     margin: 0 0 0 auto;
   }
   article {
-    background: #f6f6f6;
+    background: #f7f7f7;
   }
   article:nth-child(2n) {
     background: #f9f9f9;
@@ -110,6 +110,7 @@
   }
   .tryna-play .spinner {
     display: block;
+    display: none;
   }
   .loaded .spinner {
     display: none;
@@ -126,11 +127,43 @@
     border-radius: 1rem;
     /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);*/
   }
+  .floater {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    display: flex;
+  }
+  .stop-button {
+    background: #eee;
+    border: none;
+    width: 6rem;
+    height: 4rem;
+    font-size: 0.7rem;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+  }
+  .stop-button__icon {
+    display: inline-block;
+    font-size: 1.1rem;
+  }
 </style>
 
 
 <script lang="ts">
   import { onMount } from "svelte";
+
+  let autoplay = true;
 
 const itemsList = [
 {
@@ -164,10 +197,6 @@ text: "Subtle synthesized elements with some foley to match physics. Usually I m
 class: "inset"
 },
 {
-src: "https://ethanmuller.com/files/vid/etc/friends.mp4",
-text: "It can be fun to dance with your friend while listening to loud music.",
-},
-{
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20discover%20tab%20loop.mp4",
 text: "Lots of action in what feels like a teeny diorama. I love syncing audio to dense detailed visuals like this.",
 },
@@ -185,10 +214,6 @@ src: "https://ethanmuller.com/files/vid/sounds-good/HONK_PAINTINGLOGO_WITH_AUDIO
 text: "Back at the factory, a ball is formed from organic goop. It is rounded, plucked, and painted. Then it is ready.",
 },
 {
-src: "https://ethanmuller.com/files/vid/etc/rad.mp4",
-text: "Alternate sound design for one of my favorite PS2 games: <a href='https://en.wikipedia.org/wiki/Robot_Alchemic_Drive'>Robot Alchemic Drive (R.A.D.).</a> Trying to match that nice warm blown-out sound of 80s anime.",
-},
-{
 src: "https://ethanmuller.com/files/vid/etc/katamari.mp4",
 hidden: true,
 },
@@ -198,6 +223,14 @@ text: "Alternate sound design for Metroid Prime",
 class: "inset no-max-height",
 },
 {
+src: "https://ethanmuller.com/files/vid/etc/friends.mp4",
+text: "It can be fun to dance with your friend while listening to loud music.",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/rad.mp4",
+text: "Alternate sound design for one of my favorite PS2 games: <a href='https://en.wikipedia.org/wiki/Robot_Alchemic_Drive'>Robot Alchemic Drive (R.A.D.).</a> Trying to match that nice warm blown-out sound of 80s anime.",
+},
+{
 src: "https://ethanmuller.com/files/vid/etc/eatimng.mp4",
 class: "smol",
 hidden: true,
@@ -205,7 +238,7 @@ hidden: true,
 ]
 
   let videoElements: HTMLVideoElement[] = [];
-  let currentlyPlayingVideo: HTMLVideoElement;
+  let currentlyPlayingVideo: HTMLVideoElement | undefined;
   let loadedStates = Array(itemsList.length).fill(false);
 
   function pauseAll() {
@@ -236,7 +269,9 @@ hidden: true,
 
       vid?.parentElement?.addEventListener("mouseover", () => {
         vid?.parentElement?.classList.add("tryna-play");
-        vid.play();
+        if (autoplay) {
+          vid.play();
+        }
         currentlyPlayingVideo = vid;
       });
 
@@ -245,14 +280,27 @@ hidden: true,
         vid?.parentElement?.classList.remove("tryna-play");
       });
 
-      vid?.parentElement?.addEventListener("touchstart", () => {
+      vid?.parentElement?.addEventListener("touchstart", (e) => {
         stopCurrentlyPlaying();
         vid?.parentElement?.classList.add("tryna-play");
-        vid.play();
+        if (autoplay) {
+          vid.play();
+        }
         currentlyPlayingVideo = vid;
       });
+
     });
   });
+  function toggleAutoplay() {
+    autoplay = !autoplay;
+    
+    if (autoplay) {
+      currentlyPlayingVideo?.play()
+      currentlyPlayingVideo?.parentElement?.classList.add("tryna-play");
+    } else {
+      currentlyPlayingVideo?.pause()
+    }
+  }
 </script>
 
 <div class="plex max layout">
@@ -276,4 +324,12 @@ hidden: true,
       </article>
     {/if}
   {/each}
+  <div class="floater">
+    <button class="stop-button" on:click={toggleAutoplay}>
+      {#if autoplay}
+        <span style="margin-right: 1em">Stop</span>
+      {/if}
+      <span class="stop-button__icon">{autoplay ? '🙉' : '🐵' } </span>
+    </button>
+  </div>
 </div>
