@@ -335,6 +335,7 @@ hidden: true,
           playsinline
           bind:this={videoElements[index]}
           src={`${item.src}#t=0.1`}
+          disableRemotePlayback
           loop
         >
           <track kind="captions">
