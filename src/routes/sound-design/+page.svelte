@@ -48,17 +48,23 @@
   article:nth-child(2n) {
     background: #f9f9f9;
   }
-  article.smol {
+  article.half {
     background: white;
   }
-  .smol video {
+  .half video {
     max-width: 500px;
     max-height: 500px;
     margin: 0 auto;
   }
   .layout {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .layout > * {
+    grid-column: span 4;
+  }
+  .layout > .half {
+    grid-column: span 2;
   }
   @media (min-width: 50em) {
     p {
@@ -173,21 +179,16 @@
 
 const itemsList = [
 {
-src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
-class: "smol",
-},
-{
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20ball%20loop.mp4",
-text: "Quite the day at the factory! One of my first and favorite pieces with <a href=\"https://www.makata.tv/\">Makata</a> & Benji. I sampled actual audio footage of machinery from the (now defunct) factory where they made the Honk bubbles.",
-},
-{
-src: "https://ethanmuller.com/files/vid/sounds-good/family-nutcracker.mp4",
-text: "Carrots and chips are what I used to get this crunching sound.",
+text: "Quite the day at the factory! One of my first and favorite pieces with <a href=\"https://www.makata.tv/\">Makata</a> & <a href='https://benji.org'>Benji</a>. I sampled actual audio footage of machinery from the (now defunct) factory where they made the Honk bubbles.",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20components%20loop.mp4",
 text: "Warm guitar, wind chimes, light clinking and clunking. Physical, tactile sounds. Set in outer space, but sonically it’s a prairie in the summer.",
-hidden: true,
+hidden: false,
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/family-nutcracker.mp4",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/LFE-update-machine-v6.mp4",
@@ -219,6 +220,25 @@ src: "https://ethanmuller.com/files/vid/sounds-good/HONK_PAINTINGLOGO_WITH_AUDIO
 text: "Back at the factory, a ball is formed from organic goop. It is rounded, plucked, and painted. Then it is ready.",
 },
 {
+src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/sad_clown.mp4",
+class: "half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/diapers.mp4",
+class: "half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/eatimng.mp4",
+class: "half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/wow.mp4",
+class: "half",
+},
+{
 src: "https://ethanmuller.com/files/vid/etc/katamari.mp4",
 hidden: true,
 },
@@ -234,11 +254,6 @@ text: "It can be fun to dance with your friend while listening to loud music.",
 {
 src: "https://ethanmuller.com/files/vid/etc/rad.mp4",
 text: "Alternate sound design for one of my favorite PS2 games: <a href='https://en.wikipedia.org/wiki/Robot_Alchemic_Drive'>Robot Alchemic Drive (R.A.D.).</a> Trying to match that nice warm blown-out sound of 80s anime.",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/eatimng.mp4",
-class: "smol",
-hidden: true,
 },
 ]
 
@@ -332,6 +347,7 @@ hidden: true,
           bind:this={videoElements[index]}
           src={`${item.src}#t=0.1`}
           disableRemotePlayback
+          disablePictureInPicture
           loop
         >
           <track kind="captions">
