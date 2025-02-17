@@ -186,6 +186,17 @@
     display: inline-block;
     font-size: 1.1rem;
   }
+  footer {
+    text-align: right;
+    height: 8rem;
+    background: #dfdfdf;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 3rem;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.4);
+  }
 </style>
 
 
@@ -249,32 +260,12 @@ src: "https://ethanmuller.com/files/vid/sounds-good/HONK_PAINTINGLOGO_WITH_AUDIO
 text: "Back at the factory, a ball is formed from organic goop. It is rounded, plucked, and painted. Then it is ready.",
 },
 {
-src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
-class: "limit-doodle limit-doodle--major",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/sad_clown.mp4",
-class: "limit-doodle half",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/diapers.mp4",
-class: "limit-doodle half",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/wow.mp4",
-class: "limit-doodle half",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/eatimng.mp4",
-class: "limit-doodle half",
-},
-{
 src: "https://ethanmuller.com/files/vid/etc/katamari.mp4",
 hidden: true,
 },
 {
 src: "https://ethanmuller.com/files/vid/etc/metroid.mp4",
-text: "Alternate sound design for Metroid Prime. I made this because I thought <a href='https://youtu.be/x8kV8WwobDc?t=15'>the sound of the charge beam</a> sounds a bit shrill while it's charging and the charged shot sounds flimsy. I use low-end to add more oomph to the charged shot.",
+text: "Alternate sound design for Metroid Prime. I made this because I played the remake and was dissatisfied with <a href='https://youtu.be/x8kV8WwobDc?t=15'>the sounds of the charge beam.</a> I aimed to make the charge shot sound more powerful in comparison to the uncharged shots, and I tried to make the charging itself feel more satisfying.",
 class: "inset major",
 },
 {
@@ -286,6 +277,27 @@ class: "minor",
 src: "https://ethanmuller.com/files/vid/etc/rad.mp4",
 text: "Alternate sound design for one of my favorite PS2 games: <a href='https://en.wikipedia.org/wiki/Robot_Alchemic_Drive'>Robot Alchemic Drive (R.A.D.).</a> Trying to match that nice warm blown-out sound of 80s anime.",
 class: "minor",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/sad_clown.mp4",
+class: "limit-doodle half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
+class: "limit-doodle",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/diapers.mp4",
+class: "limit-doodle half",
+hidden: true,
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/wow.mp4",
+class: "limit-doodle half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/eatimng.mp4",
+class: "limit-doodle half",
 },
 ]
 
@@ -405,3 +417,4 @@ class: "minor",
     </button>
   </div>
 </div>
+<footer class="plex"></footer>
