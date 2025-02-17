@@ -52,19 +52,45 @@
     background: white;
   }
   .half video {
-    max-width: 500px;
-    max-height: 500px;
     margin: 0 auto;
   }
   .layout {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(12, 1fr);
   }
   .layout > * {
-    grid-column: span 4;
+    grid-column: span 12;
   }
   .layout > .half {
+    grid-column: span 6;
+  }
+  .layout > .quarter {
+    grid-column: span 3;
+  }
+  .layout > .third {
+    grid-column: span 4;
+  }
+  .layout > .limit-doodle {
+    background: white;
+    grid-column: span 6;
+  }
+  .layout > .limit-doodle--major {
+    grid-column: span 12;
+  }
+  .layout > .limit-doodle > video {
+    max-width: 500px;
+    max-height: 500px;
+    margin: 0 auto;
+  }
+  .layout > .major {
+    grid-column: span 6;
+    grid-row: span 2;
+  }
+  .layout > .major > video {
     grid-column: span 2;
+  }
+  .layout > .minor {
+    grid-column: span 6;
   }
   @media (min-width: 50em) {
     p {
@@ -86,7 +112,7 @@
     }
   }
   @media (min-width: 900px) {
-    article {
+    article:not(.minor) {
       grid-template-columns: 1fr 20em;
     }
   }
@@ -188,37 +214,17 @@ text: "Warm guitar, wind chimes, light clinking and clunking. Physical, tactile 
 hidden: false,
 },
 {
-src: "https://ethanmuller.com/files/vid/sounds-good/family-nutcracker.mp4",
+  src: "https://ethanmuller.com/files/vid/sounds-good/lfe-family-unlock-v3.mp4",
+  class: 'third',
 },
 {
-  src: "https://ethanmuller.com/files/vid/sounds-good/lfe-family-unlock-v3.mp4",
+src: "https://ethanmuller.com/files/vid/sounds-good/family-nutcracker.mp4",
+class: 'third',
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/octocat-loop.mp4",
-text: "Subtle synthesized elements with some foley to match physics. Usually I mix in mono but this has a cheeky hard pan left for his wave. No octocats were harmed in the making of this audio.",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/sad_clown.mp4",
-class: "half",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/diapers.mp4",
-class: "half",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/wow.mp4",
-class: "half",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/eatimng.mp4",
-class: "half",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/katamari.mp4",
-hidden: true,
+//text: "Subtle synthesized elements with some foley to match physics. Usually I mix in mono but this has a cheeky hard pan left for his wave. No octocats were harmed in the making of this audio.",
+class: 'third',
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/LFE-update-machine-v6.mp4",
@@ -230,11 +236,12 @@ text: "Lots of action in what feels like a teeny diorama. I love syncing audio t
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20spinball%20loop.mp4",
-text: "Q: What if a ball rolled a loop de loop on metal and got uploaded into a computer sequence and then it shoomped through a pneumatic tube to project a hologram? What if that happened? What would that sound like?<br><br>A: Tube music",
+text: "What if a ball rolled a loop de loop on metal and got uploaded into a computer sequence and then it shoomped through a pneumatic tube to project a hologram? What would that sound like?<br><br>A: Tube music",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20fanfare%20loop.mp4",
 text: "It's like that one episode of SpongeBob where...",
+hidden: true,
 class: 'inset',
 },
 {
@@ -242,23 +249,50 @@ src: "https://ethanmuller.com/files/vid/sounds-good/HONK_PAINTINGLOGO_WITH_AUDIO
 text: "Back at the factory, a ball is formed from organic goop. It is rounded, plucked, and painted. Then it is ready.",
 },
 {
+src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
+class: "limit-doodle limit-doodle--major",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/sad_clown.mp4",
+class: "limit-doodle half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/diapers.mp4",
+class: "limit-doodle half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/wow.mp4",
+class: "limit-doodle half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/eatimng.mp4",
+class: "limit-doodle half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/katamari.mp4",
+hidden: true,
+},
+{
 src: "https://ethanmuller.com/files/vid/etc/metroid.mp4",
 text: "Alternate sound design for Metroid Prime. I made this because I thought <a href='https://youtu.be/x8kV8WwobDc?t=15'>the sound of the charge beam</a> sounds a bit shrill while it's charging and the charged shot sounds flimsy. I use low-end to add more oomph to the charged shot.",
-class: "inset",
+class: "inset major",
 },
 {
 src: "https://ethanmuller.com/files/vid/etc/friends.mp4",
 text: "It can be fun to dance with your friend while listening to loud music.",
+class: "minor",
 },
 {
 src: "https://ethanmuller.com/files/vid/etc/rad.mp4",
 text: "Alternate sound design for one of my favorite PS2 games: <a href='https://en.wikipedia.org/wiki/Robot_Alchemic_Drive'>Robot Alchemic Drive (R.A.D.).</a> Trying to match that nice warm blown-out sound of 80s anime.",
+class: "minor",
 },
 ]
 
   let videoElements: HTMLVideoElement[] = [];
   let currentlyPlayingVideo: HTMLVideoElement | undefined;
   let loadedStates = Array(itemsList.length).fill(false);
+  let trynaPlayStates = Array(itemsList.length).fill(false);
 
   function pauseAll() {
     document.querySelectorAll("video").forEach((video) => video.pause());
@@ -266,14 +300,6 @@ text: "Alternate sound design for one of my favorite PS2 games: <a href='https:/
 
   function stopCurrentlyPlaying() {
     currentlyPlayingVideo?.pause();
-  }
-
-  function hover(el: HTMLElement) {
-    el.classList.add("tryna-play");
-  }
-
-  function unhover(el: HTMLElement) {
-    el.classList.remove("tryna-play");
   }
 
   function videoReady(index: number) {
@@ -289,7 +315,8 @@ text: "Alternate sound design for one of my favorite PS2 games: <a href='https:/
       vid?.addEventListener("click", () => {
         // note this is only for a click on the video which disables autoplay
         if (!autoplay) {
-          vid?.parentElement?.classList.add("tryna-play");
+          //vid?.parentElement?.classList.add("tryna-play");
+          trynaPlayStates[index] = true;
           vid.play();
           currentlyPlayingVideo = vid;
         }
@@ -298,6 +325,7 @@ text: "Alternate sound design for one of my favorite PS2 games: <a href='https:/
 
       vid?.parentElement?.addEventListener("mouseover", () => {
         vid?.parentElement?.classList.add("tryna-play");
+        trynaPlayStates[index] = true;
         if (autoplay) {
           vid.play();
         }
@@ -308,11 +336,13 @@ text: "Alternate sound design for one of my favorite PS2 games: <a href='https:/
       vid?.parentElement?.addEventListener("mouseleave", () => {
         vid.pause();
         vid?.parentElement?.classList.remove("tryna-play");
+        trynaPlayStates[index] = false;
       });
 
       vid?.parentElement?.addEventListener("touchstart", (e) => {
         stopCurrentlyPlaying();
         vid?.parentElement?.classList.add("tryna-play");
+        trynaPlayStates[index] = true;
         if (autoplay) {
           vid.play();
         }
@@ -323,13 +353,21 @@ text: "Alternate sound design for one of my favorite PS2 games: <a href='https:/
   });
   function toggleAutoplay() {
     autoplay = !autoplay;
-    
+
+    const i = videoElements.indexOf(currentlyPlayingVideo)
+
     if (autoplay) {
       currentlyPlayingVideo?.play()
-      currentlyPlayingVideo?.parentElement?.classList.add("tryna-play");
+      // if we toggled autoplay on, we need to update the state so we can show the element highlighted
+      
+      // const indexOfCurrentlyPlayingVideo = indexOf()
+
+      trynaPlayStates[i] = true;
+      //currentlyPlayingVideo?.parentElement?.classList.add("tryna-play");
       ui_sfx_b.play()
     } else {
       currentlyPlayingVideo?.pause()
+      trynaPlayStates[i] = false;
       ui_sfx_a.play()
     }
   }
