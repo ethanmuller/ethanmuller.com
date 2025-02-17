@@ -191,16 +191,38 @@ hidden: false,
 src: "https://ethanmuller.com/files/vid/sounds-good/family-nutcracker.mp4",
 },
 {
-src: "https://ethanmuller.com/files/vid/sounds-good/LFE-update-machine-v6.mp4",
-text: "Wood, metal, magnets. Click clack. Cute tumbly music reminiscent of <a href=\"https://www.youtube.com/watch?v=e33KWTJPvuU\">Un P’tit Air</a>.",
-},
-{
   src: "https://ethanmuller.com/files/vid/sounds-good/lfe-family-unlock-v3.mp4",
-  text: "Shout out to ratchets. Gotta be one of my favorite sound design elements.",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/octocat-loop.mp4",
 text: "Subtle synthesized elements with some foley to match physics. Usually I mix in mono but this has a cheeky hard pan left for his wave. No octocats were harmed in the making of this audio.",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/sad_clown.mp4",
+class: "half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/diapers.mp4",
+class: "half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/wow.mp4",
+class: "half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/eatimng.mp4",
+class: "half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/katamari.mp4",
+hidden: true,
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/LFE-update-machine-v6.mp4",
+text: "Wood, metal, magnets. Click clack. Cute tumbly music reminiscent of <a href=\"https://www.youtube.com/watch?v=e33KWTJPvuU\">Un P’tit Air</a>.",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20discover%20tab%20loop.mp4",
@@ -220,31 +242,8 @@ src: "https://ethanmuller.com/files/vid/sounds-good/HONK_PAINTINGLOGO_WITH_AUDIO
 text: "Back at the factory, a ball is formed from organic goop. It is rounded, plucked, and painted. Then it is ready.",
 },
 {
-src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/sad_clown.mp4",
-class: "half",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/diapers.mp4",
-class: "half",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/eatimng.mp4",
-class: "half",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/wow.mp4",
-class: "half",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/katamari.mp4",
-hidden: true,
-},
-{
 src: "https://ethanmuller.com/files/vid/etc/metroid.mp4",
-text: "Alternate sound design for Metroid Prime",
+text: "Alternate sound design for Metroid Prime. I made this because I thought <a href='https://youtu.be/x8kV8WwobDc?t=15'>the sound of the charge beam</a> sounds a bit shrill while it's charging and the charged shot sounds flimsy. I use low-end to add more oomph to the charged shot.",
 class: "inset",
 },
 {
