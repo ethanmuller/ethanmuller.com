@@ -287,6 +287,11 @@ class: "half inset",
 text: "Theme song for the <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life'>Game of Life</a> glider",
 },
 {
+src: "https://ethanmuller.com/files/vid/etc/ggj2025_bumpers.mp4",
+text: "<a href='https://www.thenomi.com/'>Nomi</a> did the video material for Global Game Jam 2025 and used my music for the intro bumpers.",
+class: "",
+},
+{
 src: "https://ethanmuller.com/files/vid/etc/sad_clown.mp4",
 class: "limit-doodle half",
 },
