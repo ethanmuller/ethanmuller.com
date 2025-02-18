@@ -15,12 +15,12 @@
     position: relative;
     align-items: center;
   }
+  article:hover,
   article.tryna-play {
     opacity: 1;
   }
   video {
     width: 100%;
-    height: 100%;
     object-fit: contain;
     object-position: top;
   }
@@ -29,6 +29,9 @@
     grid-template-columns: 1fr;
     /*min-height: 60vh;*/
     background: white;
+  }
+  .inset video {
+    grid-column: span 2;
   }
   .inset p {
     align-self: end;
@@ -89,9 +92,6 @@
   .layout > .major {
     grid-column: span 6;
     grid-row: span 2;
-  }
-  .layout > .major > video {
-    grid-column: span 2;
   }
   .layout > .minor {
     grid-column: span 6;
@@ -206,7 +206,7 @@
 
 <script lang="ts">
   import { onMount } from "svelte";
-  import { Howl, Howler } from 'howler'
+  import { Howl } from 'howler'
 
   const ui_sfx_a = new Howl({
     src: ['https://ethanmuller.com/files/wav/sfx-monkey-c.wav'],
@@ -216,7 +216,7 @@
     src: ['https://ethanmuller.com/files/wav/sfx-monkey-b.wav'],
   });
 
-  let autoplay = true;
+  let autoplay: boolean | undefined;
 
 const itemsList = [
 {
@@ -283,7 +283,8 @@ class: "half",
 },
 {
 src: "https://ethanmuller.com/files/vid/etc/life.mp4",
-class: "half",
+class: "half inset",
+text: "Theme song for the <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life'>Game of Life</a> glider",
 },
 {
 src: "https://ethanmuller.com/files/vid/etc/sad_clown.mp4",
@@ -347,15 +348,14 @@ class: "minor",
 
       vid?.addEventListener("click", () => {
         // note this is only for a click on the video which disables autoplay
-        if (!autoplay) {
-          //vid?.parentElement?.classList.add("tryna-play");
-          vid.play();
-          currentlyPlayingVideo = vid;
-        }
+        //vid?.parentElement?.classList.add("tryna-play");
+        vid.play();
+        currentlyPlayingVideo = vid;
         autoplay = true
       })
 
       vid?.parentElement?.addEventListener("mouseover", () => {
+        document.querySelectorAll('.tryna-play').forEach((el) => el.classList.remove("tryna-play"));
         vid?.parentElement?.classList.add("tryna-play");
         if (autoplay) {
           vid.play();
@@ -372,8 +372,9 @@ class: "minor",
       vid?.parentElement?.addEventListener("touchstart", (e) => {
         stopCurrentlyPlaying();
         vid?.parentElement?.classList.add("tryna-play");
-        if (autoplay) {
+        if (autoplay || typeof autoplay === 'undefined') {
           vid.play();
+          autoplay = true;
         }
         currentlyPlayingVideo = vid;
       });
@@ -419,12 +420,14 @@ class: "minor",
     {/if}
   {/each}
   <div class="floater">
-    <button class="stop-button" on:click={toggleAutoplay}>
-      {#if autoplay}
-        <span style="margin-right: 1em">Stop</span>
-      {/if}
-      <span class="stop-button__icon">{autoplay ? '🙉' : '🐵' } </span>
-    </button>
+    {#if typeof autoplay !== 'undefined'}
+      <button class="stop-button" on:click={toggleAutoplay}>
+        {#if autoplay}
+          <span style="margin-right: 1em">Stop</span>
+        {/if}
+        <span class="stop-button__icon">{autoplay ? '🙉' : '🐵' } </span>
+      </button>
+    {/if}
   </div>
 </div>
 <footer class="plex"></footer>
