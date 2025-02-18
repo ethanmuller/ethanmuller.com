@@ -1,18 +1,6 @@
-# create-svelte
+# ethanmuller.com
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
+This is a sveltekit project.
 
 ## Developing
 
@@ -33,6 +21,12 @@ To create a production version of your app:
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+## Deploying
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+To deploy the app, ssh into the chicago VPS and:
+
+```bash
+ cd ~/git/ethanmuller.com/ && git pull && npm run build
+```
+
+nginx will serve it from there
