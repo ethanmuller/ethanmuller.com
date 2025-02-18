@@ -220,10 +220,6 @@
 
 const itemsList = [
 {
-src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
-class: "limit-doodle limit-doodle--major",
-},
-{
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20ball%20loop.mp4",
 text: "Quite the day at the factory! One of my first and favorite pieces with <a href=\"https://www.makata.tv/\">Makata</a> & <a href='https://benji.org'>Benji</a>. I sampled actual audio footage of machinery from the (now defunct) factory where they made the Honk bubbles.",
 },
@@ -270,6 +266,24 @@ class: 'inset',
 src: "https://ethanmuller.com/files/vid/sounds-good/HONK_PAINTINGLOGO_WITH_AUDIO_v05.mp4",
 class: 'half',
 //text: "Back at the factory, a ball is formed from organic goop. It is rounded, plucked, and painted. Then it is ready.",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
+class: "limit-doodle limit-doodle--major",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/chrome.mp4",
+class: "half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/dog-song.mp4",
+//text: "lyrics: if you want im sitting here ive got two ears to hear you. or maybe we could take us a walk and have a talk to work through some of the stuff that's in your head you haven't said but want to so if you want to open on up i am your pup and i love you.",
+hidden: true,
+class: "half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/life.mp4",
+class: "half",
 },
 {
 src: "https://ethanmuller.com/files/vid/etc/sad_clown.mp4",
