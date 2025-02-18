@@ -9,6 +9,7 @@
   article {
     display: grid;
     grid-template-columns: 1fr;
+    align-content: flex-start;
     opacity: 0.7;
     transition: opacity 0.3s ease-out;
     position: relative;
@@ -62,13 +63,13 @@
   .layout > * {
     grid-column: span 12;
   }
-  .layout > .half {
-    grid-column: span 6;
-  }
   .layout > .quarter {
     grid-column: span 3;
   }
   @media (min-width: 900px) {
+  .layout > .half {
+    grid-column: span 6;
+  }
     .layout > .third {
       grid-column: span 4;
     }
