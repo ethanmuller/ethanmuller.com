@@ -311,7 +311,6 @@ class: "minor",
   let videoElements: HTMLVideoElement[] = [];
   let currentlyPlayingVideo: HTMLVideoElement | undefined;
   let loadedStates = Array(itemsList.length).fill(false);
-  let trynaPlayStates = Array(itemsList.length).fill(false);
 
   function pauseAll() {
     document.querySelectorAll("video").forEach((video) => video.pause());
@@ -335,7 +334,6 @@ class: "minor",
         // note this is only for a click on the video which disables autoplay
         if (!autoplay) {
           //vid?.parentElement?.classList.add("tryna-play");
-          trynaPlayStates[index] = true;
           vid.play();
           currentlyPlayingVideo = vid;
         }
@@ -344,7 +342,6 @@ class: "minor",
 
       vid?.parentElement?.addEventListener("mouseover", () => {
         vid?.parentElement?.classList.add("tryna-play");
-        trynaPlayStates[index] = true;
         if (autoplay) {
           vid.play();
         }
@@ -355,13 +352,11 @@ class: "minor",
       vid?.parentElement?.addEventListener("mouseleave", () => {
         vid.pause();
         vid?.parentElement?.classList.remove("tryna-play");
-        trynaPlayStates[index] = false;
       });
 
       vid?.parentElement?.addEventListener("touchstart", (e) => {
         stopCurrentlyPlaying();
         vid?.parentElement?.classList.add("tryna-play");
-        trynaPlayStates[index] = true;
         if (autoplay) {
           vid.play();
         }
@@ -377,16 +372,9 @@ class: "minor",
 
     if (autoplay) {
       currentlyPlayingVideo?.play()
-      // if we toggled autoplay on, we need to update the state so we can show the element highlighted
-      
-      // const indexOfCurrentlyPlayingVideo = indexOf()
-
-      trynaPlayStates[i] = true;
-      //currentlyPlayingVideo?.parentElement?.classList.add("tryna-play");
       ui_sfx_b.play()
     } else {
       currentlyPlayingVideo?.pause()
-      trynaPlayStates[i] = false;
       ui_sfx_a.play()
     }
   }
