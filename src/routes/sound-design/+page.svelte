@@ -20,7 +20,8 @@
   video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: top;
   }
 
   .inset {
@@ -67,8 +68,10 @@
   .layout > .quarter {
     grid-column: span 3;
   }
-  .layout > .third {
-    grid-column: span 4;
+  @media (min-width: 900px) {
+    .layout > .third {
+      grid-column: span 4;
+    }
   }
   .layout > .limit-doodle {
     background: white;
@@ -216,8 +219,22 @@
 
 const itemsList = [
 {
+src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
+class: "limit-doodle limit-doodle--major",
+},
+{
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20ball%20loop.mp4",
 text: "Quite the day at the factory! One of my first and favorite pieces with <a href=\"https://www.makata.tv/\">Makata</a> & <a href='https://benji.org'>Benji</a>. I sampled actual audio footage of machinery from the (now defunct) factory where they made the Honk bubbles.",
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/LFE-update-machine-v6.mp4",
+//text: "Wood, metal, magnets. Click clack. Cute tumbly music reminiscent of <a href=\"https://www.youtube.com/watch?v=e33KWTJPvuU\">Un P’tit Air</a>.",
+class: 'half',
+},
+{
+src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20spinball%20loop.mp4",
+class: 'half',
+//text: "What if a ball rolled a loop de loop on metal and got uploaded into a computer sequence and then it shoomped through a pneumatic tube to project a hologram? What would that sound like?<br><br>A: Tube music",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20components%20loop.mp4",
@@ -238,16 +255,9 @@ src: "https://ethanmuller.com/files/vid/sounds-good/octocat-loop.mp4",
 class: 'third',
 },
 {
-src: "https://ethanmuller.com/files/vid/sounds-good/LFE-update-machine-v6.mp4",
-text: "Wood, metal, magnets. Click clack. Cute tumbly music reminiscent of <a href=\"https://www.youtube.com/watch?v=e33KWTJPvuU\">Un P’tit Air</a>.",
-},
-{
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20discover%20tab%20loop.mp4",
-text: "Lots of action in what feels like a teeny diorama. I love syncing audio to dense detailed visuals like this.",
-},
-{
-src: "https://ethanmuller.com/files/vid/sounds-good/lfe%20spinball%20loop.mp4",
-text: "What if a ball rolled a loop de loop on metal and got uploaded into a computer sequence and then it shoomped through a pneumatic tube to project a hologram? What would that sound like?<br><br>A: Tube music",
+class: 'half',
+//text: "Lots of action in what feels like a teeny diorama. I love syncing audio to dense detailed visuals like this.",
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/honk%20fanfare%20loop.mp4",
@@ -257,39 +267,12 @@ class: 'inset',
 },
 {
 src: "https://ethanmuller.com/files/vid/sounds-good/HONK_PAINTINGLOGO_WITH_AUDIO_v05.mp4",
-text: "Back at the factory, a ball is formed from organic goop. It is rounded, plucked, and painted. Then it is ready.",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/katamari.mp4",
-hidden: true,
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/metroid.mp4",
-text: "Alternate sound design for Metroid Prime. I made this because I played the remake and was dissatisfied with <a href='https://youtu.be/x8kV8WwobDc?t=15'>the sounds of the charge beam.</a> I aimed to make the charge shot sound more powerful in comparison to the uncharged shots, and I tried to make the charging itself feel more satisfying.",
-class: "inset major",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/friends.mp4",
-text: "It can be fun to dance with your friend while listening to loud music.",
-class: "minor",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/rad.mp4",
-text: "Alternate sound design for one of my favorite PS2 games: <a href='https://en.wikipedia.org/wiki/Robot_Alchemic_Drive'>Robot Alchemic Drive (R.A.D.).</a> Trying to match that nice warm blown-out sound of 80s anime.",
-class: "minor",
+class: 'half',
+//text: "Back at the factory, a ball is formed from organic goop. It is rounded, plucked, and painted. Then it is ready.",
 },
 {
 src: "https://ethanmuller.com/files/vid/etc/sad_clown.mp4",
 class: "limit-doodle half",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/i_like_it.mp4",
-class: "limit-doodle",
-},
-{
-src: "https://ethanmuller.com/files/vid/etc/diapers.mp4",
-class: "limit-doodle half",
-hidden: true,
 },
 {
 src: "https://ethanmuller.com/files/vid/etc/wow.mp4",
@@ -298,6 +281,30 @@ class: "limit-doodle half",
 {
 src: "https://ethanmuller.com/files/vid/etc/eatimng.mp4",
 class: "limit-doodle half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/diapers.mp4",
+class: "limit-doodle half",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/metroid.mp4",
+text: "Alternate sound design for Metroid Prime. I made this because I played the Metroid Prime remake and was dissatisfied with <a href='https://youtu.be/x8kV8WwobDc?t=15'>the sounds of the charge beam</a>. I aimed to make the charge shot sound more powerful in comparison to the uncharged shots. Tried to make all sounds more satisfying in general.",
+class: "inset major",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/katamari.mp4",
+text: "Alternate sound design for Katamari Damacy, followed by original footage as reference. To get these crunchy uneven rolling sounds I'm running samples for various surfaces through a granulator: grass, sand and brick. I also made the pickup sounds shorter so they give each other more room to breathe.",
+class: "inset major",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/rad.mp4",
+text: "Alternate sound design for <a href='https://en.wikipedia.org/wiki/Robot_Alchemic_Drive'>Robot Alchemic Drive (R.A.D.).</a> Trying to match that nice warm blown-out sound of 80s anime.",
+class: "minor",
+},
+{
+src: "https://ethanmuller.com/files/vid/etc/friends.mp4",
+text: "It can be fun to dance with your friend while listening to loud music.",
+class: "minor",
 },
 ]
 
