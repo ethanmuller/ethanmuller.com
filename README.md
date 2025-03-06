@@ -1,6 +1,6 @@
 # ethanmuller.com
 
-This is a sveltekit project.
+The codebase for my personal website. It is built with sveltekit.
 
 ## Developing
 
