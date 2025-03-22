@@ -70,7 +70,7 @@
   .feat {
     padding: 0rem 0;
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr minmax(auto, 15rem);
     gap: 2rem;
     align-items: center;
   }
@@ -80,7 +80,6 @@
     display: grid;
     grid-template-columns: 3rem 1fr;
     gap: 0.5rem;
-    max-width: 15rem;
   }
   .feat img {
     width: 100%;
