@@ -66,6 +66,28 @@
     flex-direction: column; 
     padding: 2rem;
   }
+
+  .feat {
+    padding: 0rem 0;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  .feat .app {
+    font-size: 0.8rem;
+    justify-items: end;
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 0.5rem;
+  }
+  .feat img {
+    width: 100%;
+  }
+  .word {
+    word-break: keep-all;
+    white-space: pre;
+  }
 </style>
 
 <svelte:head>
@@ -107,20 +129,31 @@
   <h1 class="major-mono">hi im ethan muller</h1>
   
   <div class="plex max">
-    <p>Welcome to my personal web page.</p>
-  
-    <p>I make fun interactive multimedia <img bind:this={gifEl} style="vertical-align: middle;" src="" alt="" /></p>
+    <img bind:this={gifEl} style="vertical-align: middle;" src="" alt="" />
+
+    <div class="feat">
+      <p>I make fun interactive multimedia</p>
+
+      <div>
+        <a href="https://ethanmuller.com/bitter" class="app">
+          <img src="/bitter-squircle.svg" alt="" />
+          <div>
+            <strong>Bitter</strong> multiplayer <span class="word">1-bit</span> art toy
+          </div>
+        </a>
+      </div>
+    </div>
   
     <p>I’m into computers, phones, video games, electronics, programming, free <a href="https://github.com/ethanmuller/ethanmuller.com">open source software</a>, game dev, <a href="/sound-design">sound design</a>, Linux, Mac, Windows, Android, iOS, etc.</p>
   
-    <p>I am currently: <strong class="positive">looking for work</strong></p>
+    <p>I am currently: <strong class="positive word">looking for work</strong></p>
   
   </div>
   
   <footer class="major-mono">
     <div class="pika">
       <img src="/gif/pika.gif" alt="pikachu doing construction" />
-      Last upd<span class="shake">a</span>te: 2025-02-18
+      Last upd<span class="shake">a</span>te: 2025-03-22
     </div>
     <p>bye im ethan muller</p>
   </footer>
