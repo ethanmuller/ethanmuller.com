@@ -13,17 +13,17 @@ npm run dev
 npm run dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
 ## Deploying
 
-To deploy the app, ssh into the chicago VPS and:
+First you'll need to commit and push your work to github:
+
+```bash
+git add .
+git commit -m "do stuff"
+git push
+```
+
+Then to deploy the app, log into the Chicago VPS via ssh:
 
 ```bash
  cd ~/git/ethanmuller.com/ && git pull && npm run build
