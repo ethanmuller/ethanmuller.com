@@ -80,6 +80,7 @@
     display: grid;
     grid-template-columns: 3rem 1fr;
     gap: 0.5rem;
+    max-width: 15rem;
   }
   .feat img {
     width: 100%;
