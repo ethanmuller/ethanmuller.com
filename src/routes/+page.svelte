@@ -136,7 +136,7 @@
 
       <div>
         <a href="https://ethanmuller.com/bitter" class="app">
-          <img src="/bitter-squircle.svg" alt="" />
+          <img src="/img/bitter-squircle.svg" alt="" />
           <div>
             <strong>Bitter</strong> multiplayer <span class="word">1-bit</span> art toy
           </div>
