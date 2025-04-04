@@ -144,7 +144,7 @@
       </div>
     </div>
   
-    <p>I’m into computers, phones, video games, electronics, programming, free <a href="https://github.com/ethanmuller/ethanmuller.com">open source software</a>, game dev, <a href="/sound-design">sound design</a>, Linux, Mac, Windows, Android, iOS, etc.</p>
+    <p>I’m into computers, phones, video games, electronics, programming, free <a href="https://github.com/ethanmuller/ethanmuller.com">open source software</a>, game dev, Linux, Mac, Windows, Android, iOS, etc.</p>
   
     <p>I am currently: <strong class="positive word">looking for work</strong></p>
   
