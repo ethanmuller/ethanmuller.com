@@ -74,7 +74,11 @@
     gap: 2rem;
     align-items: center;
   }
+  .feat a {
+    text-decoration: none;
+  }
   .feat .desc {
+    text-decoration: underline;
     grid-column: 2;
   }
   .feat strong {
@@ -83,11 +87,23 @@
   .feat .app {
     font-size: 0.8rem;
     display: grid;
-    grid-template-columns: 3rem 1fr;
-    gap: 2rem;
+    grid-template-columns: 2rem 1fr;
+    gap: 1rem;
+    align-items: center;
   }
   .feat img {
     width: 100%;
+  }
+  .feat h2 {
+    font-size: 0.7em;
+    font-weight: inherit;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+  }
+  .feat .bullet {
+    font-size: 2.5rem;
+    line-height: 0;
   }
   .word {
     word-break: keep-all;
@@ -96,7 +112,7 @@
 </style>
 
 <svelte:head>
-    <title>HI IM ETHAN MULLER</title>
+    <title>👋🏻 I'm Ethan Muller</title>
     <meta property="og:title" content="HI IM ETHAN MULLER">
     <meta property="og:description" content="HI IM ETHAN MULLER">
     <meta name="description" content="HI IM ETHAN MULLER">
@@ -135,20 +151,22 @@
   
   <div class="plex max">
 
-    <p>I make fun interactive multimedia <img bind:this={gifEl} style="vertical-align: middle;" src="" alt="" /></p>
+    <p>I make fun interactive multimedia <img bind:this={gifEl} src="" alt="" /></p>
 
-    <p>I’m into computers, phones, video games, electronics, programming, free <a href="https://github.com/ethanmuller/ethanmuller.com">open source software</a>, game dev, <a href="/sound-design">sound design</a>, Linux, Mac, Windows, Android, iOS, etc.</p>
+    <p>I’m into computers, phones, video games, electronics, programming, free <a href="https://github.com/ethanmuller/ethanmuller.com">open source software</a>, human interface design, game dev, Linux, Mac, Windows, Android, iOS, etc.</p>
 
     <div class="feat">
+      <h2>Active Projects</h2>
       <a href="https://ethanmuller.com/bitter" class="app">
-        <img src="/img/bitter-squircle.svg" alt="" />
+        <img src="/img/bitter-squircle.svg" alt="" class="icon" />
         <div class="desc">
           <strong>Bitter</strong> multiplayer <span class="word">1-bit</span> art toy
         </div>
       </a>
       <a href="https://github.com/ethanmuller/typewriter" class="app">
+        <div class="bullet">&bull;</div>
         <div class="desc">
-          <strong>Typewriter</strong> anti text editor, built for focus and flow
+          <strong>Typewriter</strong> CLI anti text editor, built for focus and flow
         </div>
       </a>
     </div>
@@ -160,7 +178,7 @@
   <footer class="major-mono">
     <div class="pika">
       <img src="/gif/pika.gif" alt="pikachu doing construction" />
-      Last upd<span class="shake">a</span>te: 2025-04-04
+      Last upd<span class="shake">a</span>te: 2025-04-06
     </div>
     <p>bye im ethan muller</p>
   </footer>
