@@ -77,9 +77,11 @@
   .feat a {
     text-decoration: none;
   }
-  .feat .desc {
-    text-decoration: underline;
+  .feat .link {
     grid-column: 2;
+  }
+  .feat .desc a {
+    text-decoration: underline;
   }
   .feat strong {
     display: block;
@@ -87,7 +89,7 @@
   .feat .app {
     font-size: 0.8rem;
     display: grid;
-    grid-template-columns: 2rem 1fr;
+    grid-template-columns: 3rem 1fr;
     gap: 1rem;
     align-items: center;
   }
@@ -104,6 +106,7 @@
   .feat .bullet {
     font-size: 2.5rem;
     line-height: 0;
+    text-align: center;
   }
   .word {
     word-break: keep-all;
@@ -157,18 +160,39 @@
 
     <div class="feat">
       <h2>Active Projects</h2>
-      <a href="https://ethanmuller.com/bitter" class="app">
-        <img src="/img/bitter-squircle.svg" alt="" class="icon" />
+      <div class="app">
+        <a href="https://ethanmuller.com/bitter">
+          <img src="/img/bitter-squircle.svg" alt="" class="icon" />
+        </a>
         <div class="desc">
-          <strong>Bitter</strong> multiplayer <span class="word">1-bit</span> art toy
+          <a class="link" href="https://ethanmuller.com/bitter">Bitter</a>
+          <div>
+            multiplayer 1-bit art toy
+          </div>
         </div>
-      </a>
-      <a href="https://github.com/ethanmuller/typewriter" class="app">
-        <div class="bullet">&bull;</div>
+      </div>
+      <div class="app">
+        <a href="https://github.com/ethanmuller/typewriter">
+          <div class="bullet">&bull;</div>
+        </a>
         <div class="desc">
-          <strong>Typewriter</strong> CLI anti text editor, built for focus and flow
+          <a class="link" href="https://github.com/ethanmuller/typewriter">Typewriter</a>
+          <div>
+            CLI anti text editor, made for focus and flow
+          </div>
         </div>
-      </a>
+      </div>
+      <div class="app">
+        <a href="https://ethanmuller.com/micro_mmo">
+          <img src="/img/micro_mmo-squircle.png" alt="" class="icon" />
+        </a>
+        <div class="desc">
+          <a class="link" href="https://ethanmuller.com/micro_mmo">Micro MMO</a>
+          <div>
+            experimental hangout web space, built in collaboration with <a href="https://ferran.games/">Ferran</a>
+          </div>
+        </div>
+      </div>
     </div>
   
     <p>I am currently: <strong class="positive word">looking for work</strong></p>
@@ -178,7 +202,7 @@
   <footer class="major-mono">
     <div class="pika">
       <img src="/gif/pika.gif" alt="pikachu doing construction" />
-      Last upd<span class="shake">a</span>te: 2025-04-06
+      Last upd<span class="shake">a</span>te: 2025-04-17
     </div>
     <p>bye im ethan muller</p>
   </footer>
