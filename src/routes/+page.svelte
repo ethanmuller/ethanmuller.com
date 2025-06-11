@@ -93,6 +93,17 @@
     gap: 1rem;
     align-items: center;
   }
+  .tags {
+    padding: 0.5em 0;
+    display: flex;
+    gap: 0.5em;
+  }
+  .tag {
+    padding: 0.5em;
+    background: #eee;
+    color: #333;
+    font-size: 0.75em;
+  }
   .feat img {
     width: 100%;
   }
@@ -169,6 +180,12 @@
           <div>
             multiplayer 1-bit art toy
           </div>
+          <div class="tags">
+            <div class="tag">frontend</div>
+            <div class="tag">backend</div>
+            <div class="tag">JavaScript</div>
+            <div class="tag">Vue</div>
+          </div>
         </div>
       </div>
       <div class="app">
@@ -178,7 +195,11 @@
         <div class="desc">
           <a class="link" href="https://github.com/ethanmuller/typewriter">Typewriter</a>
           <div>
-            CLI anti text editor, made for focus and flow
+            TUI anti text editor, made for focus and flow
+          </div>
+          <div class="tags">
+            <div class="tag">TUI</div>
+            <div class="tag">CLI</div>
           </div>
         </div>
       </div>
@@ -191,6 +212,13 @@
           <div>
             experimental hangout web space, built in collaboration with <a href="https://ferran.games/">Ferran</a>
           </div>
+          <div class="tags">
+            <div class="tag">frontend</div>
+            <div class="tag">backend</div>
+            <div class="tag">TypeScript</div>
+            <div class="tag">Three.js</div>
+            <div class="tag">Vue</div>
+          </div>
         </div>
       </div>
     </div>
@@ -202,7 +230,7 @@
   <footer class="major-mono">
     <div class="pika">
       <img src="/gif/pika.gif" alt="pikachu doing construction" />
-      Last upd<span class="shake">a</span>te: 2025-04-17
+      Last upd<span class="shake">a</span>te: 2025-06-11
     </div>
     <p>bye im ethan muller</p>
   </footer>
