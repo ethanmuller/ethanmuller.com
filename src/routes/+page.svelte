@@ -223,8 +223,6 @@
       </div>
     </div>
   
-    <p>I am currently: <strong class="positive word">looking for work</strong></p>
-  
   </div>
   
   <footer class="major-mono">
