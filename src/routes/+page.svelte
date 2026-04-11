@@ -181,9 +181,29 @@
             multiplayer 1-bit art toy
           </div>
           <div class="tags">
+            <div class="tag">multiplayer</div>
             <div class="tag">frontend</div>
             <div class="tag">backend</div>
             <div class="tag">JavaScript</div>
+            <div class="tag">Vue</div>
+          </div>
+        </div>
+      </div>
+      <div class="app">
+        <a href="https://ethanmuller.com/micro_mmo">
+          <img src="/img/micro_mmo-squircle.png" alt="" class="icon" />
+        </a>
+        <div class="desc">
+          <a class="link" href="https://ethanmuller.com/micro_mmo">Micro MMO</a>
+          <div>
+            experimental hangout web space, built in collaboration with <a href="https://ferran.games/">Ferran</a>
+          </div>
+          <div class="tags">
+            <div class="tag">multiplayer</div>
+            <div class="tag">frontend</div>
+            <div class="tag">backend</div>
+            <div class="tag">TypeScript</div>
+            <div class="tag">Three.js</div>
             <div class="tag">Vue</div>
           </div>
         </div>
@@ -203,24 +223,6 @@
           </div>
         </div>
       </div>
-      <div class="app">
-        <a href="https://ethanmuller.com/micro_mmo">
-          <img src="/img/micro_mmo-squircle.png" alt="" class="icon" />
-        </a>
-        <div class="desc">
-          <a class="link" href="https://ethanmuller.com/micro_mmo">Micro MMO</a>
-          <div>
-            experimental hangout web space, built in collaboration with <a href="https://ferran.games/">Ferran</a>
-          </div>
-          <div class="tags">
-            <div class="tag">frontend</div>
-            <div class="tag">backend</div>
-            <div class="tag">TypeScript</div>
-            <div class="tag">Three.js</div>
-            <div class="tag">Vue</div>
-          </div>
-        </div>
-      </div>
     </div>
   
   </div>
@@ -228,7 +230,7 @@
   <footer class="major-mono">
     <div class="pika">
       <img src="/gif/pika.gif" alt="pikachu doing construction" />
-      Last upd<span class="shake">a</span>te: 2026-03-29
+      Last upd<span class="shake">a</span>te: 2026-04-11
     </div>
     <p>bye im ethan muller</p>
   </footer>

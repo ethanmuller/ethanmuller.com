@@ -314,7 +314,7 @@ class: "inset major",
 },
 {
 src: "https://ethanmuller.com/files/vid/etc/katamari.mp4",
-text: "Alternate sound design for Katamari Damacy, followed by original footage as reference. To get these crunchy uneven rolling sounds I'm running samples for various surfaces through a granulator: grass, sand and brick. I also made the pickup sounds shorter so they give each other more room to breathe.",
+text: "Alternate sound design for Katamari Damacy, followed by original footage as reference. To get these crunchy uneven rolling sounds I'm running samples for various surfaces through a granulator: grass, sand and brick. I also made the pickup sounds shorter so they give each other more room to breathe. Katamari Damacy's eerie without music, isn't it?",
 class: "inset major",
 },
 {
